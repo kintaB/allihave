@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>English + Coding — 98-day checklist</title>
+<style>
+  :root {
+    --bg: #0f1419;
+    --card: #1a222c;
+    --text: #e7ecf1;
+    --muted: #9aa7b5;
+    --accent: #3d9cfd;
+    --eng: #2a9d8f;
+    --code: #e9c46a;
+    --line: #2a3542;
+    --check: #1b2836;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: rgba(15,20,25,.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    padding: 12px 16px;
+  }
+  header h1 { font-size: 1.15rem; margin: 0 0 4px; }
+  header p { margin: 0; color: var(--muted); font-size: .9rem; }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 16px 14px 80px; }
+  .intro, .map, .day {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin: 12px 0;
+  }
+  .map ul { margin: 8px 0 0; padding-left: 1.1rem; color: var(--muted); }
+  .day-num {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 1.05rem;
+  }
+  .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #243040;
+    color: var(--muted);
+  }
+  h3 {
+    margin: 14px 0 8px;
+    font-size: .85rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+  h3.eng { color: var(--eng); }
+  h3.code { color: var(--code); }
+  label.item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 10px 8px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  label.item:hover { background: rgba(255,255,255,.03); }
+  label.item input {
+    width: 22px;
+    height: 22px;
+    margin-top: 2px;
+    flex: 0 0 auto;
+    accent-color: var(--accent);
+  }
+  label.item span { flex: 1; }
+  label.item.done span { opacity: .55; text-decoration: line-through; }
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: .8rem;
+    padding: 4px 8px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+  }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: .85rem;
+    padding: 24px;
+  }
+  @media (min-width: 700px) {
+    body { font-size: 17px; }
+    label.item input { width: 24px; height: 24px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>English + Coding daily checklist</h1>
+  <p>Standalone view · progress saved in this browser</p>
+</header>
+<main class="wrap">
+<section class="intro"><p>English: listen / speak / 5 tenses / Anki (from `ML plan rus.md` + 3 phases). Coding/ML: your roadmap from chat — Part 1 &amp; Part 2, by blocks and weeks.</p><p>Span: 14 coding weeks × 7 days = 98 days (~3 months). Day 1 = start Monday of Python / OOP week.</p><nav class="nav"><a href="#day-1">W1</a><a href="#day-8">W2</a><a href="#day-15">W3</a><a href="#day-22">W4</a><a href="#day-29">W5</a><a href="#day-36">W6</a><a href="#day-43">W7</a><a href="#day-50">W8</a><a href="#day-57">W9</a><a href="#day-64">W10</a><a href="#day-71">W11</a><a href="#day-78">W12</a><a href="#day-85">W13</a><a href="#day-92">W14</a></nav></section><section class="map"><h2>Coding map</h2><ul><li>Week 1: Python (1) — Дз: База ООП</li><li>Week 2: Python (2) — Дз: Параллельность + асинхронность</li><li>Week 3: Classic ML (1) — База алгоритмов (MC-03…MC-06)</li><li>Week 4: Classic ML (2) — База метрик (MET-03, MET-10, MET-11)</li><li>Week 5: Start NLP (1) — Дз Python + FastAPI (классификация) — старт; BoW (MC-01, MC-02)</li><li>Week 6: Start NLP (2) — Векторизация (VEC-01…09) + токены (TOK-01,03,04,05); финиш Дз; T2</li><li>Week 7: Классический NLP — теория (1) — Теория NLP / RNN + attention (ARC-01,02,03,12…15)</li><li>Week 8: Классический NLP — теория (2) — Дз Трансформеры + вводный трансформер (ARC-04…)</li><li>Week 9: Классический NLP — теория (3) — Дз классификация текста; метрики генерации; токенизация шире; T3</li><li>Week 10: LLM (1) — Дз по LLM; TR-01…15; alignment; decoding</li><li>Week 11: RAG (1) — Дз RAG — старт; схема RAG-01, RAG-03; инструменты RAG-05…08</li><li>Week 12: RAG (2) — Качество RAG; ретривер; кэш; финиш Дз; T5</li><li>Week 13: Agents (1) — Дз Agents — старт; оркестрация / tools</li><li>Week 14: Agents (2) — Финиш Agents; T6; сквозные OPT/INF/QTZ/PRD по желанию</li><article class="day" id="day-1">
+<div class="day-num">Day 1 <span class="badge">Week 1 (Mon)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-1:kwonop"><input type="checkbox" data-key="day-1:kwonop"><span>Active listen 30 min (subtitles): pause, add 3–5 phrases → Anki</span></label>
+<label class="item" data-key="day-1:etxvl1"><input type="checkbox" data-key="day-1:etxvl1"><span>Self-talk 10 min: today’s plan + what you will code</span></label>
+<label class="item" data-key="day-1:d2x2uz"><input type="checkbox" data-key="day-1:d2x2uz"><span>Phase 1 tech: 4–6 of 16 tech words; one English sentence each</span></label>
+<label class="item" data-key="day-1:3ilsqu"><input type="checkbox" data-key="day-1:3ilsqu"><span>Grammar: Present Simple (who I am / usual work) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Python week 1 · Дз: База ООП</h3>
+<label class="item" data-key="day-1:thh9hd"><input type="checkbox" data-key="day-1:thh9hd"><span>Старт недели: Изучать / писать ООП по Дз из бота (классы, наследование, абстракции)</span></label>
+<label class="item" data-key="day-1:fpmj3c"><input type="checkbox" data-key="day-1:fpmj3c"><span>Старт недели: Связать с bank_sys / текущим репо: что уже сделано по ООП</span></label>
+</article>
+<article class="day" id="day-2">
+<div class="day-num">Day 2 <span class="badge">Week 1 (Tue)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-2:97n2c3"><input type="checkbox" data-key="day-2:97n2c3"><span>Semi-passive 25 min: fewer pauses, follow the flow</span></label>
+<label class="item" data-key="day-2:pqtaen"><input type="checkbox" data-key="day-2:pqtaen"><span>ChatGPT Voice 25 min: warm-up, then work topics</span></label>
+<label class="item" data-key="day-2:d2x2uz"><input type="checkbox" data-key="day-2:d2x2uz"><span>Phase 1 tech: 4–6 of 16 tech words; one English sentence each</span></label>
+<label class="item" data-key="day-2:peav27"><input type="checkbox" data-key="day-2:peav27"><span>Grammar: Present Continuous (this sprint) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Python week 1 · Дз: База ООП</h3>
+<label class="item" data-key="day-2:9mojoq"><input type="checkbox" data-key="day-2:9mojoq"><span>Изучать / писать ООП по Дз из бота (классы, наследование, абстракции)</span></label>
+<label class="item" data-key="day-2:r5oygd"><input type="checkbox" data-key="day-2:r5oygd"><span>Связать с bank_sys / текущим репо: что уже сделано по ООП</span></label>
+</article>
+<article class="day" id="day-3">
+<div class="day-num">Day 3 <span class="badge">Week 1 (Wed)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-3:oe7s2p"><input type="checkbox" data-key="day-3:oe7s2p"><span>Active 20 min + semi-passive 20 min (IT/ML talk you like)</span></label>
+<label class="item" data-key="day-3:wcoc2o"><input type="checkbox" data-key="day-3:wcoc2o"><span>2 min English: explain one async/Python idea from today</span></label>
+<label class="item" data-key="day-3:d2x2uz"><input type="checkbox" data-key="day-3:d2x2uz"><span>Phase 1 tech: 4–6 of 16 tech words; one English sentence each</span></label>
+<label class="item" data-key="day-3:91v9t2"><input type="checkbox" data-key="day-3:91v9t2"><span>Grammar: Past Simple (past projects) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Python week 1 · Дз: База ООП</h3>
+<label class="item" data-key="day-3:9mojoq"><input type="checkbox" data-key="day-3:9mojoq"><span>Изучать / писать ООП по Дз из бота (классы, наследование, абстракции)</span></label>
+<label class="item" data-key="day-3:r5oygd"><input type="checkbox" data-key="day-3:r5oygd"><span>Связать с bank_sys / текущим репо: что уже сделано по ООП</span></label>
+</article>
+<article class="day" id="day-4">
+<div class="day-num">Day 4 <span class="badge">Week 1 (Thu)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-4:kqn6ys"><input type="checkbox" data-key="day-4:kqn6ys"><span>Active: short tech/interview clip; phrases → Anki</span></label>
+<label class="item" data-key="day-4:hl4eck"><input type="checkbox" data-key="day-4:hl4eck"><span>Voice 20 min: stack + current role, no notes</span></label>
+<label class="item" data-key="day-4:d2x2uz"><input type="checkbox" data-key="day-4:d2x2uz"><span>Phase 1 tech: 4–6 of 16 tech words; one English sentence each</span></label>
+<label class="item" data-key="day-4:lapjf7"><input type="checkbox" data-key="day-4:lapjf7"><span>Grammar: Present Perfect (what I’ve built) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Python week 1 · Дз: База ООП</h3>
+<label class="item" data-key="day-4:9mojoq"><input type="checkbox" data-key="day-4:9mojoq"><span>Изучать / писать ООП по Дз из бота (классы, наследование, абстракции)</span></label>
+<label class="item" data-key="day-4:r5oygd"><input type="checkbox" data-key="day-4:r5oygd"><span>Связать с bank_sys / текущим репо: что уже сделано по ООП</span></label>
+</article>
+<article class="day" id="day-5">
+<div class="day-num">Day 5 <span class="badge">Week 1 (Fri)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-5:rsdsld"><input type="checkbox" data-key="day-5:rsdsld"><span>Passive English in background today + 20 min active with subtitles</span></label>
+<label class="item" data-key="day-5:apvduh"><input type="checkbox" data-key="day-5:apvduh"><span>Record 60-sec self-intro; fix 2 lines; record again</span></label>
+<label class="item" data-key="day-5:d2x2uz"><input type="checkbox" data-key="day-5:d2x2uz"><span>Phase 1 tech: 4–6 of 16 tech words; one English sentence each</span></label>
+<label class="item" data-key="day-5:dom3b4"><input type="checkbox" data-key="day-5:dom3b4"><span>Grammar: Future will / going to (plans) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Python week 1 · Дз: База ООП</h3>
+<label class="item" data-key="day-5:9mojoq"><input type="checkbox" data-key="day-5:9mojoq"><span>Изучать / писать ООП по Дз из бота (классы, наследование, абстракции)</span></label>
+<label class="item" data-key="day-5:r5oygd"><input type="checkbox" data-key="day-5:r5oygd"><span>Связать с bank_sys / текущим репо: что уже сделано по ООП</span></label>
+<label class="item" data-key="day-5:sf0wac"><input type="checkbox" data-key="day-5:sf0wac"><span>**Homework check:** Проверить Дз по ООП: коммит сдан? есть фидбек ментора? закрыть замечания</span></label>
+</article>
+<article class="day" id="day-6">
+<div class="day-num">Day 6 <span class="badge">Week 1 (Sat)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-6:p5bgi9"><input type="checkbox" data-key="day-6:p5bgi9"><span>Re-listen yesterday’s clip without pausing; note what you catch now</span></label>
+<label class="item" data-key="day-6:etxvl1"><input type="checkbox" data-key="day-6:etxvl1"><span>Self-talk 10 min: today’s plan + what you will code</span></label>
+<label class="item" data-key="day-6:d2x2uz"><input type="checkbox" data-key="day-6:d2x2uz"><span>Phase 1 tech: 4–6 of 16 tech words; one English sentence each</span></label>
+<label class="item" data-key="day-6:dg2tbs"><input type="checkbox" data-key="day-6:dg2tbs"><span>Grammar: Present Simple (who I am / usual work) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Python week 1 · Дз: База ООП</h3>
+<label class="item" data-key="day-6:9mojoq"><input type="checkbox" data-key="day-6:9mojoq"><span>Изучать / писать ООП по Дз из бота (классы, наследование, абстракции)</span></label>
+<label class="item" data-key="day-6:r5oygd"><input type="checkbox" data-key="day-6:r5oygd"><span>Связать с bank_sys / текущим репо: что уже сделано по ООП</span></label>
+</article>
+<article class="day" id="day-7">
+<div class="day-num">Day 7 <span class="badge">Week 1 (Sun)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-7:kwonop"><input type="checkbox" data-key="day-7:kwonop"><span>Active listen 30 min (subtitles): pause, add 3–5 phrases → Anki</span></label>
+<label class="item" data-key="day-7:pqtaen"><input type="checkbox" data-key="day-7:pqtaen"><span>ChatGPT Voice 25 min: warm-up, then work topics</span></label>
+<label class="item" data-key="day-7:d2x2uz"><input type="checkbox" data-key="day-7:d2x2uz"><span>Phase 1 tech: 4–6 of 16 tech words; one English sentence each</span></label>
+<label class="item" data-key="day-7:enbx2i"><input type="checkbox" data-key="day-7:enbx2i"><span>Grammar: Present Continuous (this sprint) — write 5 work sentences; say aloud</span></label>
+<label class="item" data-key="day-7:u40ylm"><input type="checkbox" data-key="day-7:u40ylm"><span>Weekly English review 15–20 min: Anki load + one weak speaking spot</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Python week 1 · Дз: База ООП</h3>
+<label class="item" data-key="day-7:bue2au"><input type="checkbox" data-key="day-7:bue2au"><span>Итог недели (коротко): прогресс по «Дз: База ООП»</span></label>
+<label class="item" data-key="day-7:bue2au"><input type="checkbox" data-key="day-7:bue2au"><span>Итог недели (коротко): прогресс по «Дз: База ООП»</span></label>
+</article>
+<article class="day" id="day-8">
+<div class="day-num">Day 8 <span class="badge">Week 2 (Mon)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-8:97n2c3"><input type="checkbox" data-key="day-8:97n2c3"><span>Semi-passive 25 min: fewer pauses, follow the flow</span></label>
+<label class="item" data-key="day-8:wcoc2o"><input type="checkbox" data-key="day-8:wcoc2o"><span>2 min English: explain one async/Python idea from today</span></label>
+<label class="item" data-key="day-8:gvc5bp"><input type="checkbox" data-key="day-8:gvc5bp"><span>Anki + 10 Skyeng words; reuse yesterday’s 5 words in Voice</span></label>
+<label class="item" data-key="day-8:q4w0jf"><input type="checkbox" data-key="day-8:q4w0jf"><span>Grammar: Past Simple (past projects) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Python week 2 · Дз: Параллельность + асинхронность</h3>
+<label class="item" data-key="day-8:75rap1"><input type="checkbox" data-key="day-8:75rap1"><span>Старт недели: Дз из бота: threads / processes / async (смотреть asyncio.canvas)</span></label>
+<label class="item" data-key="day-8:mi3ail"><input type="checkbox" data-key="day-8:mi3ail"><span>Старт недели: Практика: мини-пример IO-bound vs CPU-bound</span></label>
+</article>
+<article class="day" id="day-9">
+<div class="day-num">Day 9 <span class="badge">Week 2 (Tue)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-9:oe7s2p"><input type="checkbox" data-key="day-9:oe7s2p"><span>Active 20 min + semi-passive 20 min (IT/ML talk you like)</span></label>
+<label class="item" data-key="day-9:hl4eck"><input type="checkbox" data-key="day-9:hl4eck"><span>Voice 20 min: stack + current role, no notes</span></label>
+<label class="item" data-key="day-9:5mxe69"><input type="checkbox" data-key="day-9:5mxe69"><span>Anki reviews + 5 new Skyeng words from vocabulary.md; tiny work sentence each</span></label>
+<label class="item" data-key="day-9:reztqn"><input type="checkbox" data-key="day-9:reztqn"><span>Grammar: Present Perfect (what I’ve built) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Python week 2 · Дз: Параллельность + асинхронность</h3>
+<label class="item" data-key="day-9:zbp5kq"><input type="checkbox" data-key="day-9:zbp5kq"><span>Дз из бота: threads / processes / async (смотреть asyncio.canvas)</span></label>
+<label class="item" data-key="day-9:2ygc48"><input type="checkbox" data-key="day-9:2ygc48"><span>Практика: мини-пример IO-bound vs CPU-bound</span></label>
+</article>
+<article class="day" id="day-10">
+<div class="day-num">Day 10 <span class="badge">Week 2 (Wed)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-10:kqn6ys"><input type="checkbox" data-key="day-10:kqn6ys"><span>Active: short tech/interview clip; phrases → Anki</span></label>
+<label class="item" data-key="day-10:apvduh"><input type="checkbox" data-key="day-10:apvduh"><span>Record 60-sec self-intro; fix 2 lines; record again</span></label>
+<label class="item" data-key="day-10:q95exe"><input type="checkbox" data-key="day-10:q95exe"><span>Anki 20–30 min; add 10 Skyeng cards</span></label>
+<label class="item" data-key="day-10:zf8nav"><input type="checkbox" data-key="day-10:zf8nav"><span>Grammar: Future will / going to (plans) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Python week 2 · Дз: Параллельность + асинхронность</h3>
+<label class="item" data-key="day-10:zbp5kq"><input type="checkbox" data-key="day-10:zbp5kq"><span>Дз из бота: threads / processes / async (смотреть asyncio.canvas)</span></label>
+<label class="item" data-key="day-10:2ygc48"><input type="checkbox" data-key="day-10:2ygc48"><span>Практика: мини-пример IO-bound vs CPU-bound</span></label>
+</article>
+<article class="day" id="day-11">
+<div class="day-num">Day 11 <span class="badge">Week 2 (Thu)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-11:rsdsld"><input type="checkbox" data-key="day-11:rsdsld"><span>Passive English in background today + 20 min active with subtitles</span></label>
+<label class="item" data-key="day-11:etxvl1"><input type="checkbox" data-key="day-11:etxvl1"><span>Self-talk 10 min: today’s plan + what you will code</span></label>
+<label class="item" data-key="day-11:qi1yva"><input type="checkbox" data-key="day-11:qi1yva"><span>Anki catch-up reviews + reuse 5 mature words in a 2-min spoken story</span></label>
+<label class="item" data-key="day-11:heeg3"><input type="checkbox" data-key="day-11:heeg3"><span>Grammar: Present Simple (who I am / usual work) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Python week 2 · Дз: Параллельность + асинхронность</h3>
+<label class="item" data-key="day-11:zbp5kq"><input type="checkbox" data-key="day-11:zbp5kq"><span>Дз из бота: threads / processes / async (смотреть asyncio.canvas)</span></label>
+<label class="item" data-key="day-11:2ygc48"><input type="checkbox" data-key="day-11:2ygc48"><span>Практика: мини-пример IO-bound vs CPU-bound</span></label>
+<label class="item" data-key="day-11:olpoc4"><input type="checkbox" data-key="day-11:olpoc4"><span>**Homework check:** Проверить Дз Parallelism/Async: коммит + ревью; подготовиться к T1</span></label>
+</article>
+<article class="day" id="day-12">
+<div class="day-num">Day 12 <span class="badge">Week 2 (Fri)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-12:p5bgi9"><input type="checkbox" data-key="day-12:p5bgi9"><span>Re-listen yesterday’s clip without pausing; note what you catch now</span></label>
+<label class="item" data-key="day-12:pqtaen"><input type="checkbox" data-key="day-12:pqtaen"><span>ChatGPT Voice 25 min: warm-up, then work topics</span></label>
+<label class="item" data-key="day-12:gvc5bp"><input type="checkbox" data-key="day-12:gvc5bp"><span>Anki + 10 Skyeng words; reuse yesterday’s 5 words in Voice</span></label>
+<label class="item" data-key="day-12:oav66s"><input type="checkbox" data-key="day-12:oav66s"><span>Grammar: Present Continuous (this sprint) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Python week 2 · Дз: Параллельность + асинхронность</h3>
+<label class="item" data-key="day-12:zbp5kq"><input type="checkbox" data-key="day-12:zbp5kq"><span>Дз из бота: threads / processes / async (смотреть asyncio.canvas)</span></label>
+<label class="item" data-key="day-12:2ygc48"><input type="checkbox" data-key="day-12:2ygc48"><span>Практика: мини-пример IO-bound vs CPU-bound</span></label>
+</article>
+<article class="day" id="day-13">
+<div class="day-num">Day 13 <span class="badge">Week 2 (Sat)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-13:kwonop"><input type="checkbox" data-key="day-13:kwonop"><span>Active listen 30 min (subtitles): pause, add 3–5 phrases → Anki</span></label>
+<label class="item" data-key="day-13:wcoc2o"><input type="checkbox" data-key="day-13:wcoc2o"><span>2 min English: explain one async/Python idea from today</span></label>
+<label class="item" data-key="day-13:5mxe69"><input type="checkbox" data-key="day-13:5mxe69"><span>Anki reviews + 5 new Skyeng words from vocabulary.md; tiny work sentence each</span></label>
+<label class="item" data-key="day-13:9y4a90"><input type="checkbox" data-key="day-13:9y4a90"><span>Grammar: Past Simple (past projects) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Python week 2 · Дз: Параллельность + асинхронность</h3>
+<label class="item" data-key="day-13:zbp5kq"><input type="checkbox" data-key="day-13:zbp5kq"><span>Дз из бота: threads / processes / async (смотреть asyncio.canvas)</span></label>
+<label class="item" data-key="day-13:2ygc48"><input type="checkbox" data-key="day-13:2ygc48"><span>Практика: мини-пример IO-bound vs CPU-bound</span></label>
+</article>
+<article class="day" id="day-14">
+<div class="day-num">Day 14 <span class="badge">Week 2 (Sun)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-14:97n2c3"><input type="checkbox" data-key="day-14:97n2c3"><span>Semi-passive 25 min: fewer pauses, follow the flow</span></label>
+<label class="item" data-key="day-14:hl4eck"><input type="checkbox" data-key="day-14:hl4eck"><span>Voice 20 min: stack + current role, no notes</span></label>
+<label class="item" data-key="day-14:q95exe"><input type="checkbox" data-key="day-14:q95exe"><span>Anki 20–30 min; add 10 Skyeng cards</span></label>
+<label class="item" data-key="day-14:eq0k6c"><input type="checkbox" data-key="day-14:eq0k6c"><span>Grammar: Present Perfect (what I’ve built) — write 10; record 5</span></label>
+<label class="item" data-key="day-14:u40ylm"><input type="checkbox" data-key="day-14:u40ylm"><span>Weekly English review 15–20 min: Anki load + one weak speaking spot</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Python week 2 · Дз: Параллельность + асинхронность</h3>
+<label class="item" data-key="day-14:r84fub"><input type="checkbox" data-key="day-14:r84fub"><span>Итог недели (коротко): прогресс по «Дз: Параллельность + асинхронность»</span></label>
+<label class="item" data-key="day-14:r84fub"><input type="checkbox" data-key="day-14:r84fub"><span>Итог недели (коротко): прогресс по «Дз: Параллельность + асинхронность»</span></label>
+<label class="item" data-key="day-14:5a08ht"><input type="checkbox" data-key="day-14:5a08ht"><span>**Gate:** T1 (Тест) — Python + Base: пройти или запланировать сдачу</span></label>
+</article>
+<article class="day" id="day-15">
+<div class="day-num">Day 15 <span class="badge">Week 3 (Mon)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-15:oe7s2p"><input type="checkbox" data-key="day-15:oe7s2p"><span>Active 20 min + semi-passive 20 min (IT/ML talk you like)</span></label>
+<label class="item" data-key="day-15:jwk5p3"><input type="checkbox" data-key="day-15:jwk5p3"><span>Voice: “Tell me about yourself” 90 sec + follow-ups</span></label>
+<label class="item" data-key="day-15:qi1yva"><input type="checkbox" data-key="day-15:qi1yva"><span>Anki catch-up reviews + reuse 5 mature words in a 2-min spoken story</span></label>
+<label class="item" data-key="day-15:dnlimt"><input type="checkbox" data-key="day-15:dnlimt"><span>Grammar: Future will / going to (plans) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Classic ML week 1 · База алгоритмов (MC-03…MC-06)</h3>
+<label class="item" data-key="day-15:o1w5lr"><input type="checkbox" data-key="day-15:o1w5lr"><span>Старт недели: Разобрать вопросы MC-03, MC-04, MC-05, MC-06 (основные парадигмы)</span></label>
+<label class="item" data-key="day-15:rgkn7r"><input type="checkbox" data-key="day-15:rgkn7r"><span>Старт недели: Кратко законспектировать своими словами 1 страницу</span></label>
+</article>
+<article class="day" id="day-16">
+<div class="day-num">Day 16 <span class="badge">Week 3 (Tue)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-16:kqn6ys"><input type="checkbox" data-key="day-16:kqn6ys"><span>Active: short tech/interview clip; phrases → Anki</span></label>
+<label class="item" data-key="day-16:vllh3w"><input type="checkbox" data-key="day-16:vllh3w"><span>Project story A out loud 2–3 min (problem → role → build → result)</span></label>
+<label class="item" data-key="day-16:gvc5bp"><input type="checkbox" data-key="day-16:gvc5bp"><span>Anki + 10 Skyeng words; reuse yesterday’s 5 words in Voice</span></label>
+<label class="item" data-key="day-16:3ilsqu"><input type="checkbox" data-key="day-16:3ilsqu"><span>Grammar: Present Simple (who I am / usual work) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Classic ML week 1 · База алгоритмов (MC-03…MC-06)</h3>
+<label class="item" data-key="day-16:ita1ho"><input type="checkbox" data-key="day-16:ita1ho"><span>Разобрать вопросы MC-03, MC-04, MC-05, MC-06 (основные парадигмы)</span></label>
+<label class="item" data-key="day-16:ter5v2"><input type="checkbox" data-key="day-16:ter5v2"><span>Кратко законспектировать своими словами 1 страницу</span></label>
+</article>
+<article class="day" id="day-17">
+<div class="day-num">Day 17 <span class="badge">Week 3 (Wed)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-17:rsdsld"><input type="checkbox" data-key="day-17:rsdsld"><span>Passive English in background today + 20 min active with subtitles</span></label>
+<label class="item" data-key="day-17:1brwbs"><input type="checkbox" data-key="day-17:1brwbs"><span>Project story B out loud 2–3 min</span></label>
+<label class="item" data-key="day-17:5mxe69"><input type="checkbox" data-key="day-17:5mxe69"><span>Anki reviews + 5 new Skyeng words from vocabulary.md; tiny work sentence each</span></label>
+<label class="item" data-key="day-17:peav27"><input type="checkbox" data-key="day-17:peav27"><span>Grammar: Present Continuous (this sprint) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Classic ML week 1 · База алгоритмов (MC-03…MC-06)</h3>
+<label class="item" data-key="day-17:ita1ho"><input type="checkbox" data-key="day-17:ita1ho"><span>Разобрать вопросы MC-03, MC-04, MC-05, MC-06 (основные парадигмы)</span></label>
+<label class="item" data-key="day-17:ter5v2"><input type="checkbox" data-key="day-17:ter5v2"><span>Кратко законспектировать своими словами 1 страницу</span></label>
+</article>
+<article class="day" id="day-18">
+<div class="day-num">Day 18 <span class="badge">Week 3 (Thu)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-18:p5bgi9"><input type="checkbox" data-key="day-18:p5bgi9"><span>Re-listen yesterday’s clip without pausing; note what you catch now</span></label>
+<label class="item" data-key="day-18:tpw0cc"><input type="checkbox" data-key="day-18:tpw0cc"><span>Tradeoffs 15 min: threads vs processes OR sync vs async</span></label>
+<label class="item" data-key="day-18:q95exe"><input type="checkbox" data-key="day-18:q95exe"><span>Anki 20–30 min; add 10 Skyeng cards</span></label>
+<label class="item" data-key="day-18:91v9t2"><input type="checkbox" data-key="day-18:91v9t2"><span>Grammar: Past Simple (past projects) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Classic ML week 1 · База алгоритмов (MC-03…MC-06)</h3>
+<label class="item" data-key="day-18:ita1ho"><input type="checkbox" data-key="day-18:ita1ho"><span>Разобрать вопросы MC-03, MC-04, MC-05, MC-06 (основные парадигмы)</span></label>
+<label class="item" data-key="day-18:ter5v2"><input type="checkbox" data-key="day-18:ter5v2"><span>Кратко законспектировать своими словами 1 страницу</span></label>
+</article>
+<article class="day" id="day-19">
+<div class="day-num">Day 19 <span class="badge">Week 3 (Fri)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-19:kwonop"><input type="checkbox" data-key="day-19:kwonop"><span>Active listen 30 min (subtitles): pause, add 3–5 phrases → Anki</span></label>
+<label class="item" data-key="day-19:2k4m33"><input type="checkbox" data-key="day-19:2k4m33"><span>Behavioral STAR: conflict / deadline / mistake (pick one)</span></label>
+<label class="item" data-key="day-19:qi1yva"><input type="checkbox" data-key="day-19:qi1yva"><span>Anki catch-up reviews + reuse 5 mature words in a 2-min spoken story</span></label>
+<label class="item" data-key="day-19:lapjf7"><input type="checkbox" data-key="day-19:lapjf7"><span>Grammar: Present Perfect (what I’ve built) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Classic ML week 1 · База алгоритмов (MC-03…MC-06)</h3>
+<label class="item" data-key="day-19:ita1ho"><input type="checkbox" data-key="day-19:ita1ho"><span>Разобрать вопросы MC-03, MC-04, MC-05, MC-06 (основные парадигмы)</span></label>
+<label class="item" data-key="day-19:ter5v2"><input type="checkbox" data-key="day-19:ter5v2"><span>Кратко законспектировать своими словами 1 страницу</span></label>
+</article>
+<article class="day" id="day-20">
+<div class="day-num">Day 20 <span class="badge">Week 3 (Sat)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-20:97n2c3"><input type="checkbox" data-key="day-20:97n2c3"><span>Semi-passive 25 min: fewer pauses, follow the flow</span></label>
+<label class="item" data-key="day-20:fpf97c"><input type="checkbox" data-key="day-20:fpf97c"><span>Voice 25 min: “What are you working on now?”</span></label>
+<label class="item" data-key="day-20:gvc5bp"><input type="checkbox" data-key="day-20:gvc5bp"><span>Anki + 10 Skyeng words; reuse yesterday’s 5 words in Voice</span></label>
+<label class="item" data-key="day-20:dom3b4"><input type="checkbox" data-key="day-20:dom3b4"><span>Grammar: Future will / going to (plans) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Classic ML week 1 · База алгоритмов (MC-03…MC-06)</h3>
+<label class="item" data-key="day-20:ita1ho"><input type="checkbox" data-key="day-20:ita1ho"><span>Разобрать вопросы MC-03, MC-04, MC-05, MC-06 (основные парадигмы)</span></label>
+<label class="item" data-key="day-20:ter5v2"><input type="checkbox" data-key="day-20:ter5v2"><span>Кратко законспектировать своими словами 1 страницу</span></label>
+<label class="item" data-key="day-20:vpmkjm"><input type="checkbox" data-key="day-20:vpmkjm"><span>**Homework check:** Самопроверка: объяснить вслух MC-03…06 без подглядывания (5–10 мин)</span></label>
+</article>
+<article class="day" id="day-21">
+<div class="day-num">Day 21 <span class="badge">Week 3 (Sun)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-21:oe7s2p"><input type="checkbox" data-key="day-21:oe7s2p"><span>Active 20 min + semi-passive 20 min (IT/ML talk you like)</span></label>
+<label class="item" data-key="day-21:tn3dbb"><input type="checkbox" data-key="day-21:tn3dbb"><span>Speak 5 questions for the company out loud</span></label>
+<label class="item" data-key="day-21:5mxe69"><input type="checkbox" data-key="day-21:5mxe69"><span>Anki reviews + 5 new Skyeng words from vocabulary.md; tiny work sentence each</span></label>
+<label class="item" data-key="day-21:dg2tbs"><input type="checkbox" data-key="day-21:dg2tbs"><span>Grammar: Present Simple (who I am / usual work) — speak 8 examples to Voice (no writing)</span></label>
+<label class="item" data-key="day-21:u40ylm"><input type="checkbox" data-key="day-21:u40ylm"><span>Weekly English review 15–20 min: Anki load + one weak speaking spot</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Classic ML week 1 · База алгоритмов (MC-03…MC-06)</h3>
+<label class="item" data-key="day-21:hfwlhw"><input type="checkbox" data-key="day-21:hfwlhw"><span>Итог недели (коротко): прогресс по «База алгоритмов (MC-03…MC-06)»</span></label>
+<label class="item" data-key="day-21:hfwlhw"><input type="checkbox" data-key="day-21:hfwlhw"><span>Итог недели (коротко): прогресс по «База алгоритмов (MC-03…MC-06)»</span></label>
+</article>
+<article class="day" id="day-22">
+<div class="day-num">Day 22 <span class="badge">Week 4 (Mon)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-22:kqn6ys"><input type="checkbox" data-key="day-22:kqn6ys"><span>Active: short tech/interview clip; phrases → Anki</span></label>
+<label class="item" data-key="day-22:jwk5p3"><input type="checkbox" data-key="day-22:jwk5p3"><span>Voice: “Tell me about yourself” 90 sec + follow-ups</span></label>
+<label class="item" data-key="day-22:q95exe"><input type="checkbox" data-key="day-22:q95exe"><span>Anki 20–30 min; add 10 Skyeng cards</span></label>
+<label class="item" data-key="day-22:enbx2i"><input type="checkbox" data-key="day-22:enbx2i"><span>Grammar: Present Continuous (this sprint) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Classic ML week 2 · База метрик (MET-03, MET-10, MET-11)</h3>
+<label class="item" data-key="day-22:9v67v8"><input type="checkbox" data-key="day-22:9v67v8"><span>Старт недели: Разобрать MET-03, MET-10, MET-11</span></label>
+<label class="item" data-key="day-22:r25uap"><input type="checkbox" data-key="day-22:r25uap"><span>Старт недели: Примеры: когда какая метрика подходит</span></label>
+</article>
+<article class="day" id="day-23">
+<div class="day-num">Day 23 <span class="badge">Week 4 (Tue)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-23:rsdsld"><input type="checkbox" data-key="day-23:rsdsld"><span>Passive English in background today + 20 min active with subtitles</span></label>
+<label class="item" data-key="day-23:vllh3w"><input type="checkbox" data-key="day-23:vllh3w"><span>Project story A out loud 2–3 min (problem → role → build → result)</span></label>
+<label class="item" data-key="day-23:qi1yva"><input type="checkbox" data-key="day-23:qi1yva"><span>Anki catch-up reviews + reuse 5 mature words in a 2-min spoken story</span></label>
+<label class="item" data-key="day-23:q4w0jf"><input type="checkbox" data-key="day-23:q4w0jf"><span>Grammar: Past Simple (past projects) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Classic ML week 2 · База метрик (MET-03, MET-10, MET-11)</h3>
+<label class="item" data-key="day-23:z0d2mh"><input type="checkbox" data-key="day-23:z0d2mh"><span>Разобрать MET-03, MET-10, MET-11</span></label>
+<label class="item" data-key="day-23:gz4xho"><input type="checkbox" data-key="day-23:gz4xho"><span>Примеры: когда какая метрика подходит</span></label>
+</article>
+<article class="day" id="day-24">
+<div class="day-num">Day 24 <span class="badge">Week 4 (Wed)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-24:p5bgi9"><input type="checkbox" data-key="day-24:p5bgi9"><span>Re-listen yesterday’s clip without pausing; note what you catch now</span></label>
+<label class="item" data-key="day-24:1brwbs"><input type="checkbox" data-key="day-24:1brwbs"><span>Project story B out loud 2–3 min</span></label>
+<label class="item" data-key="day-24:gvc5bp"><input type="checkbox" data-key="day-24:gvc5bp"><span>Anki + 10 Skyeng words; reuse yesterday’s 5 words in Voice</span></label>
+<label class="item" data-key="day-24:reztqn"><input type="checkbox" data-key="day-24:reztqn"><span>Grammar: Present Perfect (what I’ve built) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Classic ML week 2 · База метрик (MET-03, MET-10, MET-11)</h3>
+<label class="item" data-key="day-24:z0d2mh"><input type="checkbox" data-key="day-24:z0d2mh"><span>Разобрать MET-03, MET-10, MET-11</span></label>
+<label class="item" data-key="day-24:gz4xho"><input type="checkbox" data-key="day-24:gz4xho"><span>Примеры: когда какая метрика подходит</span></label>
+</article>
+<article class="day" id="day-25">
+<div class="day-num">Day 25 <span class="badge">Week 4 (Thu)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-25:kwonop"><input type="checkbox" data-key="day-25:kwonop"><span>Active listen 30 min (subtitles): pause, add 3–5 phrases → Anki</span></label>
+<label class="item" data-key="day-25:tpw0cc"><input type="checkbox" data-key="day-25:tpw0cc"><span>Tradeoffs 15 min: threads vs processes OR sync vs async</span></label>
+<label class="item" data-key="day-25:5mxe69"><input type="checkbox" data-key="day-25:5mxe69"><span>Anki reviews + 5 new Skyeng words from vocabulary.md; tiny work sentence each</span></label>
+<label class="item" data-key="day-25:zf8nav"><input type="checkbox" data-key="day-25:zf8nav"><span>Grammar: Future will / going to (plans) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Classic ML week 2 · База метрик (MET-03, MET-10, MET-11)</h3>
+<label class="item" data-key="day-25:z0d2mh"><input type="checkbox" data-key="day-25:z0d2mh"><span>Разобрать MET-03, MET-10, MET-11</span></label>
+<label class="item" data-key="day-25:gz4xho"><input type="checkbox" data-key="day-25:gz4xho"><span>Примеры: когда какая метрика подходит</span></label>
+</article>
+<article class="day" id="day-26">
+<div class="day-num">Day 26 <span class="badge">Week 4 (Fri)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-26:97n2c3"><input type="checkbox" data-key="day-26:97n2c3"><span>Semi-passive 25 min: fewer pauses, follow the flow</span></label>
+<label class="item" data-key="day-26:2k4m33"><input type="checkbox" data-key="day-26:2k4m33"><span>Behavioral STAR: conflict / deadline / mistake (pick one)</span></label>
+<label class="item" data-key="day-26:q95exe"><input type="checkbox" data-key="day-26:q95exe"><span>Anki 20–30 min; add 10 Skyeng cards</span></label>
+<label class="item" data-key="day-26:heeg3"><input type="checkbox" data-key="day-26:heeg3"><span>Grammar: Present Simple (who I am / usual work) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Classic ML week 2 · База метрик (MET-03, MET-10, MET-11)</h3>
+<label class="item" data-key="day-26:z0d2mh"><input type="checkbox" data-key="day-26:z0d2mh"><span>Разобрать MET-03, MET-10, MET-11</span></label>
+<label class="item" data-key="day-26:gz4xho"><input type="checkbox" data-key="day-26:gz4xho"><span>Примеры: когда какая метрика подходит</span></label>
+<label class="item" data-key="day-26:e0b9am"><input type="checkbox" data-key="day-26:e0b9am"><span>**Homework check:** Повторить метрики + алгоритмы недели 1; закрыть пробелы Classic ML</span></label>
+</article>
+<article class="day" id="day-27">
+<div class="day-num">Day 27 <span class="badge">Week 4 (Sat)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-27:oe7s2p"><input type="checkbox" data-key="day-27:oe7s2p"><span>Active 20 min + semi-passive 20 min (IT/ML talk you like)</span></label>
+<label class="item" data-key="day-27:fpf97c"><input type="checkbox" data-key="day-27:fpf97c"><span>Voice 25 min: “What are you working on now?”</span></label>
+<label class="item" data-key="day-27:qi1yva"><input type="checkbox" data-key="day-27:qi1yva"><span>Anki catch-up reviews + reuse 5 mature words in a 2-min spoken story</span></label>
+<label class="item" data-key="day-27:oav66s"><input type="checkbox" data-key="day-27:oav66s"><span>Grammar: Present Continuous (this sprint) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Classic ML week 2 · База метрик (MET-03, MET-10, MET-11)</h3>
+<label class="item" data-key="day-27:z0d2mh"><input type="checkbox" data-key="day-27:z0d2mh"><span>Разобрать MET-03, MET-10, MET-11</span></label>
+<label class="item" data-key="day-27:gz4xho"><input type="checkbox" data-key="day-27:gz4xho"><span>Примеры: когда какая метрика подходит</span></label>
+</article>
+<article class="day" id="day-28">
+<div class="day-num">Day 28 <span class="badge">Week 4 (Sun)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-28:kqn6ys"><input type="checkbox" data-key="day-28:kqn6ys"><span>Active: short tech/interview clip; phrases → Anki</span></label>
+<label class="item" data-key="day-28:tn3dbb"><input type="checkbox" data-key="day-28:tn3dbb"><span>Speak 5 questions for the company out loud</span></label>
+<label class="item" data-key="day-28:gvc5bp"><input type="checkbox" data-key="day-28:gvc5bp"><span>Anki + 10 Skyeng words; reuse yesterday’s 5 words in Voice</span></label>
+<label class="item" data-key="day-28:9y4a90"><input type="checkbox" data-key="day-28:9y4a90"><span>Grammar: Past Simple (past projects) — write 5 work sentences; say aloud</span></label>
+<label class="item" data-key="day-28:u40ylm"><input type="checkbox" data-key="day-28:u40ylm"><span>Weekly English review 15–20 min: Anki load + one weak speaking spot</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Classic ML week 2 · База метрик (MET-03, MET-10, MET-11)</h3>
+<label class="item" data-key="day-28:a4tp8d"><input type="checkbox" data-key="day-28:a4tp8d"><span>Итог недели (коротко): прогресс по «База метрик (MET-03, MET-10, MET-11)»</span></label>
+<label class="item" data-key="day-28:a4tp8d"><input type="checkbox" data-key="day-28:a4tp8d"><span>Итог недели (коротко): прогресс по «База метрик (MET-03, MET-10, MET-11)»</span></label>
+</article>
+<article class="day" id="day-29">
+<div class="day-num">Day 29 <span class="badge">Week 5 (Mon)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-29:rsdsld"><input type="checkbox" data-key="day-29:rsdsld"><span>Passive English in background today + 20 min active with subtitles</span></label>
+<label class="item" data-key="day-29:jwk5p3"><input type="checkbox" data-key="day-29:jwk5p3"><span>Voice: “Tell me about yourself” 90 sec + follow-ups</span></label>
+<label class="item" data-key="day-29:5mxe69"><input type="checkbox" data-key="day-29:5mxe69"><span>Anki reviews + 5 new Skyeng words from vocabulary.md; tiny work sentence each</span></label>
+<label class="item" data-key="day-29:eq0k6c"><input type="checkbox" data-key="day-29:eq0k6c"><span>Grammar: Present Perfect (what I’ve built) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Start NLP week 1 · Дз Python + FastAPI (классификация) — старт; BoW (MC-01, MC-02)</h3>
+<label class="item" data-key="day-29:6lk102"><input type="checkbox" data-key="day-29:6lk102"><span>Старт недели: Начать Дз FastAPI classification из бота</span></label>
+<label class="item" data-key="day-29:r2crhq"><input type="checkbox" data-key="day-29:r2crhq"><span>Старт недели: Вопросы: предобработка / BoW — MC-01, MC-02</span></label>
+</article>
+<article class="day" id="day-30">
+<div class="day-num">Day 30 <span class="badge">Week 5 (Tue)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-30:p5bgi9"><input type="checkbox" data-key="day-30:p5bgi9"><span>Re-listen yesterday’s clip without pausing; note what you catch now</span></label>
+<label class="item" data-key="day-30:vllh3w"><input type="checkbox" data-key="day-30:vllh3w"><span>Project story A out loud 2–3 min (problem → role → build → result)</span></label>
+<label class="item" data-key="day-30:q95exe"><input type="checkbox" data-key="day-30:q95exe"><span>Anki 20–30 min; add 10 Skyeng cards</span></label>
+<label class="item" data-key="day-30:dnlimt"><input type="checkbox" data-key="day-30:dnlimt"><span>Grammar: Future will / going to (plans) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Start NLP week 1 · Дз Python + FastAPI (классификация) — старт; BoW (MC-01, MC-02)</h3>
+<label class="item" data-key="day-30:h882pl"><input type="checkbox" data-key="day-30:h882pl"><span>Начать Дз FastAPI classification из бота</span></label>
+<label class="item" data-key="day-30:1lt4ux"><input type="checkbox" data-key="day-30:1lt4ux"><span>Вопросы: предобработка / BoW — MC-01, MC-02</span></label>
+</article>
+<article class="day" id="day-31">
+<div class="day-num">Day 31 <span class="badge">Week 5 (Wed)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-31:kwonop"><input type="checkbox" data-key="day-31:kwonop"><span>Active listen 30 min (subtitles): pause, add 3–5 phrases → Anki</span></label>
+<label class="item" data-key="day-31:1brwbs"><input type="checkbox" data-key="day-31:1brwbs"><span>Project story B out loud 2–3 min</span></label>
+<label class="item" data-key="day-31:qi1yva"><input type="checkbox" data-key="day-31:qi1yva"><span>Anki catch-up reviews + reuse 5 mature words in a 2-min spoken story</span></label>
+<label class="item" data-key="day-31:3ilsqu"><input type="checkbox" data-key="day-31:3ilsqu"><span>Grammar: Present Simple (who I am / usual work) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Start NLP week 1 · Дз Python + FastAPI (классификация) — старт; BoW (MC-01, MC-02)</h3>
+<label class="item" data-key="day-31:h882pl"><input type="checkbox" data-key="day-31:h882pl"><span>Начать Дз FastAPI classification из бота</span></label>
+<label class="item" data-key="day-31:1lt4ux"><input type="checkbox" data-key="day-31:1lt4ux"><span>Вопросы: предобработка / BoW — MC-01, MC-02</span></label>
+</article>
+<article class="day" id="day-32">
+<div class="day-num">Day 32 <span class="badge">Week 5 (Thu)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-32:97n2c3"><input type="checkbox" data-key="day-32:97n2c3"><span>Semi-passive 25 min: fewer pauses, follow the flow</span></label>
+<label class="item" data-key="day-32:tpw0cc"><input type="checkbox" data-key="day-32:tpw0cc"><span>Tradeoffs 15 min: threads vs processes OR sync vs async</span></label>
+<label class="item" data-key="day-32:gvc5bp"><input type="checkbox" data-key="day-32:gvc5bp"><span>Anki + 10 Skyeng words; reuse yesterday’s 5 words in Voice</span></label>
+<label class="item" data-key="day-32:peav27"><input type="checkbox" data-key="day-32:peav27"><span>Grammar: Present Continuous (this sprint) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Start NLP week 1 · Дз Python + FastAPI (классификация) — старт; BoW (MC-01, MC-02)</h3>
+<label class="item" data-key="day-32:h882pl"><input type="checkbox" data-key="day-32:h882pl"><span>Начать Дз FastAPI classification из бота</span></label>
+<label class="item" data-key="day-32:1lt4ux"><input type="checkbox" data-key="day-32:1lt4ux"><span>Вопросы: предобработка / BoW — MC-01, MC-02</span></label>
+</article>
+<article class="day" id="day-33">
+<div class="day-num">Day 33 <span class="badge">Week 5 (Fri)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-33:oe7s2p"><input type="checkbox" data-key="day-33:oe7s2p"><span>Active 20 min + semi-passive 20 min (IT/ML talk you like)</span></label>
+<label class="item" data-key="day-33:2k4m33"><input type="checkbox" data-key="day-33:2k4m33"><span>Behavioral STAR: conflict / deadline / mistake (pick one)</span></label>
+<label class="item" data-key="day-33:5mxe69"><input type="checkbox" data-key="day-33:5mxe69"><span>Anki reviews + 5 new Skyeng words from vocabulary.md; tiny work sentence each</span></label>
+<label class="item" data-key="day-33:91v9t2"><input type="checkbox" data-key="day-33:91v9t2"><span>Grammar: Past Simple (past projects) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Start NLP week 1 · Дз Python + FastAPI (классификация) — старт; BoW (MC-01, MC-02)</h3>
+<label class="item" data-key="day-33:h882pl"><input type="checkbox" data-key="day-33:h882pl"><span>Начать Дз FastAPI classification из бота</span></label>
+<label class="item" data-key="day-33:1lt4ux"><input type="checkbox" data-key="day-33:1lt4ux"><span>Вопросы: предобработка / BoW — MC-01, MC-02</span></label>
+<label class="item" data-key="day-33:xcen89"><input type="checkbox" data-key="day-33:xcen89"><span>**Homework check:** Чекпоинт Дз FastAPI: что уже в репо? какие блокеры?</span></label>
+</article>
+<article class="day" id="day-34">
+<div class="day-num">Day 34 <span class="badge">Week 5 (Sat)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-34:kqn6ys"><input type="checkbox" data-key="day-34:kqn6ys"><span>Active: short tech/interview clip; phrases → Anki</span></label>
+<label class="item" data-key="day-34:fpf97c"><input type="checkbox" data-key="day-34:fpf97c"><span>Voice 25 min: “What are you working on now?”</span></label>
+<label class="item" data-key="day-34:q95exe"><input type="checkbox" data-key="day-34:q95exe"><span>Anki 20–30 min; add 10 Skyeng cards</span></label>
+<label class="item" data-key="day-34:lapjf7"><input type="checkbox" data-key="day-34:lapjf7"><span>Grammar: Present Perfect (what I’ve built) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Start NLP week 1 · Дз Python + FastAPI (классификация) — старт; BoW (MC-01, MC-02)</h3>
+<label class="item" data-key="day-34:h882pl"><input type="checkbox" data-key="day-34:h882pl"><span>Начать Дз FastAPI classification из бота</span></label>
+<label class="item" data-key="day-34:1lt4ux"><input type="checkbox" data-key="day-34:1lt4ux"><span>Вопросы: предобработка / BoW — MC-01, MC-02</span></label>
+</article>
+<article class="day" id="day-35">
+<div class="day-num">Day 35 <span class="badge">Week 5 (Sun)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-35:rsdsld"><input type="checkbox" data-key="day-35:rsdsld"><span>Passive English in background today + 20 min active with subtitles</span></label>
+<label class="item" data-key="day-35:tn3dbb"><input type="checkbox" data-key="day-35:tn3dbb"><span>Speak 5 questions for the company out loud</span></label>
+<label class="item" data-key="day-35:qi1yva"><input type="checkbox" data-key="day-35:qi1yva"><span>Anki catch-up reviews + reuse 5 mature words in a 2-min spoken story</span></label>
+<label class="item" data-key="day-35:dom3b4"><input type="checkbox" data-key="day-35:dom3b4"><span>Grammar: Future will / going to (plans) — write 10; record 5</span></label>
+<label class="item" data-key="day-35:u40ylm"><input type="checkbox" data-key="day-35:u40ylm"><span>Weekly English review 15–20 min: Anki load + one weak speaking spot</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Start NLP week 1 · Дз Python + FastAPI (классификация) — старт; BoW (MC-01, MC-02)</h3>
+<label class="item" data-key="day-35:tqh80d"><input type="checkbox" data-key="day-35:tqh80d"><span>Итог недели (коротко): прогресс по «Дз Python + FastAPI (классификация) — старт; BoW (MC-01, MC-02)»</span></label>
+<label class="item" data-key="day-35:tqh80d"><input type="checkbox" data-key="day-35:tqh80d"><span>Итог недели (коротко): прогресс по «Дз Python + FastAPI (классификация) — старт; BoW (MC-01, MC-02)»</span></label>
+</article>
+<article class="day" id="day-36">
+<div class="day-num">Day 36 <span class="badge">Week 6 (Mon)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-36:p5bgi9"><input type="checkbox" data-key="day-36:p5bgi9"><span>Re-listen yesterday’s clip without pausing; note what you catch now</span></label>
+<label class="item" data-key="day-36:jwk5p3"><input type="checkbox" data-key="day-36:jwk5p3"><span>Voice: “Tell me about yourself” 90 sec + follow-ups</span></label>
+<label class="item" data-key="day-36:gvc5bp"><input type="checkbox" data-key="day-36:gvc5bp"><span>Anki + 10 Skyeng words; reuse yesterday’s 5 words in Voice</span></label>
+<label class="item" data-key="day-36:dg2tbs"><input type="checkbox" data-key="day-36:dg2tbs"><span>Grammar: Present Simple (who I am / usual work) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Start NLP week 2 · Векторизация (VEC-01…09) + токены (TOK-01,03,04,05); финиш Дз; T2</h3>
+<label class="item" data-key="day-36:htfz44"><input type="checkbox" data-key="day-36:htfz44"><span>Старт недели: VEC-01…VEC-09 — эмбеддинги / векторизация</span></label>
+<label class="item" data-key="day-36:q05rt5"><input type="checkbox" data-key="day-36:q05rt5"><span>Старт недели: TOK-01, TOK-03, TOK-04, TOK-05 — минимум по токенам</span></label>
+<label class="item" data-key="day-36:xli14y"><input type="checkbox" data-key="day-36:xli14y"><span>Старт недели: Дожать Дз FastAPI classification</span></label>
+</article>
+<article class="day" id="day-37">
+<div class="day-num">Day 37 <span class="badge">Week 6 (Tue)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-37:kwonop"><input type="checkbox" data-key="day-37:kwonop"><span>Active listen 30 min (subtitles): pause, add 3–5 phrases → Anki</span></label>
+<label class="item" data-key="day-37:vllh3w"><input type="checkbox" data-key="day-37:vllh3w"><span>Project story A out loud 2–3 min (problem → role → build → result)</span></label>
+<label class="item" data-key="day-37:5mxe69"><input type="checkbox" data-key="day-37:5mxe69"><span>Anki reviews + 5 new Skyeng words from vocabulary.md; tiny work sentence each</span></label>
+<label class="item" data-key="day-37:enbx2i"><input type="checkbox" data-key="day-37:enbx2i"><span>Grammar: Present Continuous (this sprint) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Start NLP week 2 · Векторизация (VEC-01…09) + токены (TOK-01,03,04,05); финиш Дз; T2</h3>
+<label class="item" data-key="day-37:aimo7l"><input type="checkbox" data-key="day-37:aimo7l"><span>VEC-01…VEC-09 — эмбеддинги / векторизация</span></label>
+<label class="item" data-key="day-37:w8ay76"><input type="checkbox" data-key="day-37:w8ay76"><span>TOK-01, TOK-03, TOK-04, TOK-05 — минимум по токенам</span></label>
+<label class="item" data-key="day-37:8gb6dp"><input type="checkbox" data-key="day-37:8gb6dp"><span>Дожать Дз FastAPI classification</span></label>
+</article>
+<article class="day" id="day-38">
+<div class="day-num">Day 38 <span class="badge">Week 6 (Wed)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-38:97n2c3"><input type="checkbox" data-key="day-38:97n2c3"><span>Semi-passive 25 min: fewer pauses, follow the flow</span></label>
+<label class="item" data-key="day-38:1brwbs"><input type="checkbox" data-key="day-38:1brwbs"><span>Project story B out loud 2–3 min</span></label>
+<label class="item" data-key="day-38:q95exe"><input type="checkbox" data-key="day-38:q95exe"><span>Anki 20–30 min; add 10 Skyeng cards</span></label>
+<label class="item" data-key="day-38:q4w0jf"><input type="checkbox" data-key="day-38:q4w0jf"><span>Grammar: Past Simple (past projects) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Start NLP week 2 · Векторизация (VEC-01…09) + токены (TOK-01,03,04,05); финиш Дз; T2</h3>
+<label class="item" data-key="day-38:aimo7l"><input type="checkbox" data-key="day-38:aimo7l"><span>VEC-01…VEC-09 — эмбеддинги / векторизация</span></label>
+<label class="item" data-key="day-38:w8ay76"><input type="checkbox" data-key="day-38:w8ay76"><span>TOK-01, TOK-03, TOK-04, TOK-05 — минимум по токенам</span></label>
+<label class="item" data-key="day-38:8gb6dp"><input type="checkbox" data-key="day-38:8gb6dp"><span>Дожать Дз FastAPI classification</span></label>
+</article>
+<article class="day" id="day-39">
+<div class="day-num">Day 39 <span class="badge">Week 6 (Thu)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-39:oe7s2p"><input type="checkbox" data-key="day-39:oe7s2p"><span>Active 20 min + semi-passive 20 min (IT/ML talk you like)</span></label>
+<label class="item" data-key="day-39:tpw0cc"><input type="checkbox" data-key="day-39:tpw0cc"><span>Tradeoffs 15 min: threads vs processes OR sync vs async</span></label>
+<label class="item" data-key="day-39:qi1yva"><input type="checkbox" data-key="day-39:qi1yva"><span>Anki catch-up reviews + reuse 5 mature words in a 2-min spoken story</span></label>
+<label class="item" data-key="day-39:reztqn"><input type="checkbox" data-key="day-39:reztqn"><span>Grammar: Present Perfect (what I’ve built) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Start NLP week 2 · Векторизация (VEC-01…09) + токены (TOK-01,03,04,05); финиш Дз; T2</h3>
+<label class="item" data-key="day-39:aimo7l"><input type="checkbox" data-key="day-39:aimo7l"><span>VEC-01…VEC-09 — эмбеддинги / векторизация</span></label>
+<label class="item" data-key="day-39:w8ay76"><input type="checkbox" data-key="day-39:w8ay76"><span>TOK-01, TOK-03, TOK-04, TOK-05 — минимум по токенам</span></label>
+<label class="item" data-key="day-39:8gb6dp"><input type="checkbox" data-key="day-39:8gb6dp"><span>Дожать Дз FastAPI classification</span></label>
+<label class="item" data-key="day-39:ck96a2"><input type="checkbox" data-key="day-39:ck96a2"><span>**Homework check:** Сдать / проверить Дз FastAPI; подготовиться к T2</span></label>
+</article>
+<article class="day" id="day-40">
+<div class="day-num">Day 40 <span class="badge">Week 6 (Fri)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-40:kqn6ys"><input type="checkbox" data-key="day-40:kqn6ys"><span>Active: short tech/interview clip; phrases → Anki</span></label>
+<label class="item" data-key="day-40:2k4m33"><input type="checkbox" data-key="day-40:2k4m33"><span>Behavioral STAR: conflict / deadline / mistake (pick one)</span></label>
+<label class="item" data-key="day-40:gvc5bp"><input type="checkbox" data-key="day-40:gvc5bp"><span>Anki + 10 Skyeng words; reuse yesterday’s 5 words in Voice</span></label>
+<label class="item" data-key="day-40:zf8nav"><input type="checkbox" data-key="day-40:zf8nav"><span>Grammar: Future will / going to (plans) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Start NLP week 2 · Векторизация (VEC-01…09) + токены (TOK-01,03,04,05); финиш Дз; T2</h3>
+<label class="item" data-key="day-40:aimo7l"><input type="checkbox" data-key="day-40:aimo7l"><span>VEC-01…VEC-09 — эмбеддинги / векторизация</span></label>
+<label class="item" data-key="day-40:w8ay76"><input type="checkbox" data-key="day-40:w8ay76"><span>TOK-01, TOK-03, TOK-04, TOK-05 — минимум по токенам</span></label>
+<label class="item" data-key="day-40:8gb6dp"><input type="checkbox" data-key="day-40:8gb6dp"><span>Дожать Дз FastAPI classification</span></label>
+</article>
+<article class="day" id="day-41">
+<div class="day-num">Day 41 <span class="badge">Week 6 (Sat)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-41:rsdsld"><input type="checkbox" data-key="day-41:rsdsld"><span>Passive English in background today + 20 min active with subtitles</span></label>
+<label class="item" data-key="day-41:fpf97c"><input type="checkbox" data-key="day-41:fpf97c"><span>Voice 25 min: “What are you working on now?”</span></label>
+<label class="item" data-key="day-41:5mxe69"><input type="checkbox" data-key="day-41:5mxe69"><span>Anki reviews + 5 new Skyeng words from vocabulary.md; tiny work sentence each</span></label>
+<label class="item" data-key="day-41:heeg3"><input type="checkbox" data-key="day-41:heeg3"><span>Grammar: Present Simple (who I am / usual work) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Start NLP week 2 · Векторизация (VEC-01…09) + токены (TOK-01,03,04,05); финиш Дз; T2</h3>
+<label class="item" data-key="day-41:aimo7l"><input type="checkbox" data-key="day-41:aimo7l"><span>VEC-01…VEC-09 — эмбеддинги / векторизация</span></label>
+<label class="item" data-key="day-41:w8ay76"><input type="checkbox" data-key="day-41:w8ay76"><span>TOK-01, TOK-03, TOK-04, TOK-05 — минимум по токенам</span></label>
+<label class="item" data-key="day-41:8gb6dp"><input type="checkbox" data-key="day-41:8gb6dp"><span>Дожать Дз FastAPI classification</span></label>
+</article>
+<article class="day" id="day-42">
+<div class="day-num">Day 42 <span class="badge">Week 6 (Sun)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-42:p5bgi9"><input type="checkbox" data-key="day-42:p5bgi9"><span>Re-listen yesterday’s clip without pausing; note what you catch now</span></label>
+<label class="item" data-key="day-42:tn3dbb"><input type="checkbox" data-key="day-42:tn3dbb"><span>Speak 5 questions for the company out loud</span></label>
+<label class="item" data-key="day-42:q95exe"><input type="checkbox" data-key="day-42:q95exe"><span>Anki 20–30 min; add 10 Skyeng cards</span></label>
+<label class="item" data-key="day-42:oav66s"><input type="checkbox" data-key="day-42:oav66s"><span>Grammar: Present Continuous (this sprint) — speak 8 examples to Voice (no writing)</span></label>
+<label class="item" data-key="day-42:u40ylm"><input type="checkbox" data-key="day-42:u40ylm"><span>Weekly English review 15–20 min: Anki load + one weak speaking spot</span></label>
+<h3 class="code">Coding / ML — Часть 1 — Python + Classic · Start NLP week 2 · Векторизация (VEC-01…09) + токены (TOK-01,03,04,05); финиш Дз; T2</h3>
+<label class="item" data-key="day-42:oti4yu"><input type="checkbox" data-key="day-42:oti4yu"><span>Итог недели (коротко): прогресс по «Векторизация (VEC-01…09) + токены (TOK-01,03,04,05); финиш Дз; T2»</span></label>
+<label class="item" data-key="day-42:oti4yu"><input type="checkbox" data-key="day-42:oti4yu"><span>Итог недели (коротко): прогресс по «Векторизация (VEC-01…09) + токены (TOK-01,03,04,05); финиш Дз; T2»</span></label>
+<label class="item" data-key="day-42:oti4yu"><input type="checkbox" data-key="day-42:oti4yu"><span>Итог недели (коротко): прогресс по «Векторизация (VEC-01…09) + токены (TOK-01,03,04,05); финиш Дз; T2»</span></label>
+<label class="item" data-key="day-42:o12te9"><input type="checkbox" data-key="day-42:o12te9"><span>**Gate:** T2 — Classic ML + Start NLP (первая часть)</span></label>
+</article>
+<article class="day" id="day-43">
+<div class="day-num">Day 43 <span class="badge">Week 7 (Mon)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-43:kwonop"><input type="checkbox" data-key="day-43:kwonop"><span>Active listen 30 min (subtitles): pause, add 3–5 phrases → Anki</span></label>
+<label class="item" data-key="day-43:jwk5p3"><input type="checkbox" data-key="day-43:jwk5p3"><span>Voice: “Tell me about yourself” 90 sec + follow-ups</span></label>
+<label class="item" data-key="day-43:qi1yva"><input type="checkbox" data-key="day-43:qi1yva"><span>Anki catch-up reviews + reuse 5 mature words in a 2-min spoken story</span></label>
+<label class="item" data-key="day-43:9y4a90"><input type="checkbox" data-key="day-43:9y4a90"><span>Grammar: Past Simple (past projects) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · Классический NLP — теория week 1 · Теория NLP / RNN + attention (ARC-01,02,03,12…15)</h3>
+<label class="item" data-key="day-43:saqby4"><input type="checkbox" data-key="day-43:saqby4"><span>Старт недели: Мапа блок 1: теория классического NLP</span></label>
+<label class="item" data-key="day-43:g2jkyi"><input type="checkbox" data-key="day-43:g2jkyi"><span>Старт недели: Вопросы ARC-01, ARC-02, ARC-03, ARC-12…ARC-15</span></label>
+</article>
+<article class="day" id="day-44">
+<div class="day-num">Day 44 <span class="badge">Week 7 (Tue)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-44:97n2c3"><input type="checkbox" data-key="day-44:97n2c3"><span>Semi-passive 25 min: fewer pauses, follow the flow</span></label>
+<label class="item" data-key="day-44:vllh3w"><input type="checkbox" data-key="day-44:vllh3w"><span>Project story A out loud 2–3 min (problem → role → build → result)</span></label>
+<label class="item" data-key="day-44:gvc5bp"><input type="checkbox" data-key="day-44:gvc5bp"><span>Anki + 10 Skyeng words; reuse yesterday’s 5 words in Voice</span></label>
+<label class="item" data-key="day-44:eq0k6c"><input type="checkbox" data-key="day-44:eq0k6c"><span>Grammar: Present Perfect (what I’ve built) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · Классический NLP — теория week 1 · Теория NLP / RNN + attention (ARC-01,02,03,12…15)</h3>
+<label class="item" data-key="day-44:wnct7z"><input type="checkbox" data-key="day-44:wnct7z"><span>Мапа блок 1: теория классического NLP</span></label>
+<label class="item" data-key="day-44:mxc5qp"><input type="checkbox" data-key="day-44:mxc5qp"><span>Вопросы ARC-01, ARC-02, ARC-03, ARC-12…ARC-15</span></label>
+</article>
+<article class="day" id="day-45">
+<div class="day-num">Day 45 <span class="badge">Week 7 (Wed)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-45:oe7s2p"><input type="checkbox" data-key="day-45:oe7s2p"><span>Active 20 min + semi-passive 20 min (IT/ML talk you like)</span></label>
+<label class="item" data-key="day-45:1brwbs"><input type="checkbox" data-key="day-45:1brwbs"><span>Project story B out loud 2–3 min</span></label>
+<label class="item" data-key="day-45:5mxe69"><input type="checkbox" data-key="day-45:5mxe69"><span>Anki reviews + 5 new Skyeng words from vocabulary.md; tiny work sentence each</span></label>
+<label class="item" data-key="day-45:dnlimt"><input type="checkbox" data-key="day-45:dnlimt"><span>Grammar: Future will / going to (plans) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · Классический NLP — теория week 1 · Теория NLP / RNN + attention (ARC-01,02,03,12…15)</h3>
+<label class="item" data-key="day-45:wnct7z"><input type="checkbox" data-key="day-45:wnct7z"><span>Мапа блок 1: теория классического NLP</span></label>
+<label class="item" data-key="day-45:mxc5qp"><input type="checkbox" data-key="day-45:mxc5qp"><span>Вопросы ARC-01, ARC-02, ARC-03, ARC-12…ARC-15</span></label>
+<label class="item" data-key="day-45:8wm4br"><input type="checkbox" data-key="day-45:8wm4br"><span>(Сквозное, по желанию) 1 вопрос из OPT / INF / QTZ / PRD</span></label>
+</article>
+<article class="day" id="day-46">
+<div class="day-num">Day 46 <span class="badge">Week 7 (Thu)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-46:kqn6ys"><input type="checkbox" data-key="day-46:kqn6ys"><span>Active: short tech/interview clip; phrases → Anki</span></label>
+<label class="item" data-key="day-46:tpw0cc"><input type="checkbox" data-key="day-46:tpw0cc"><span>Tradeoffs 15 min: threads vs processes OR sync vs async</span></label>
+<label class="item" data-key="day-46:q95exe"><input type="checkbox" data-key="day-46:q95exe"><span>Anki 20–30 min; add 10 Skyeng cards</span></label>
+<label class="item" data-key="day-46:3ilsqu"><input type="checkbox" data-key="day-46:3ilsqu"><span>Grammar: Present Simple (who I am / usual work) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · Классический NLP — теория week 1 · Теория NLP / RNN + attention (ARC-01,02,03,12…15)</h3>
+<label class="item" data-key="day-46:wnct7z"><input type="checkbox" data-key="day-46:wnct7z"><span>Мапа блок 1: теория классического NLP</span></label>
+<label class="item" data-key="day-46:mxc5qp"><input type="checkbox" data-key="day-46:mxc5qp"><span>Вопросы ARC-01, ARC-02, ARC-03, ARC-12…ARC-15</span></label>
+</article>
+<article class="day" id="day-47">
+<div class="day-num">Day 47 <span class="badge">Week 7 (Fri)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-47:rsdsld"><input type="checkbox" data-key="day-47:rsdsld"><span>Passive English in background today + 20 min active with subtitles</span></label>
+<label class="item" data-key="day-47:2k4m33"><input type="checkbox" data-key="day-47:2k4m33"><span>Behavioral STAR: conflict / deadline / mistake (pick one)</span></label>
+<label class="item" data-key="day-47:qi1yva"><input type="checkbox" data-key="day-47:qi1yva"><span>Anki catch-up reviews + reuse 5 mature words in a 2-min spoken story</span></label>
+<label class="item" data-key="day-47:peav27"><input type="checkbox" data-key="day-47:peav27"><span>Grammar: Present Continuous (this sprint) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · Классический NLP — теория week 1 · Теория NLP / RNN + attention (ARC-01,02,03,12…15)</h3>
+<label class="item" data-key="day-47:wnct7z"><input type="checkbox" data-key="day-47:wnct7z"><span>Мапа блок 1: теория классического NLP</span></label>
+<label class="item" data-key="day-47:mxc5qp"><input type="checkbox" data-key="day-47:mxc5qp"><span>Вопросы ARC-01, ARC-02, ARC-03, ARC-12…ARC-15</span></label>
+</article>
+<article class="day" id="day-48">
+<div class="day-num">Day 48 <span class="badge">Week 7 (Sat)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-48:p5bgi9"><input type="checkbox" data-key="day-48:p5bgi9"><span>Re-listen yesterday’s clip without pausing; note what you catch now</span></label>
+<label class="item" data-key="day-48:fpf97c"><input type="checkbox" data-key="day-48:fpf97c"><span>Voice 25 min: “What are you working on now?”</span></label>
+<label class="item" data-key="day-48:gvc5bp"><input type="checkbox" data-key="day-48:gvc5bp"><span>Anki + 10 Skyeng words; reuse yesterday’s 5 words in Voice</span></label>
+<label class="item" data-key="day-48:91v9t2"><input type="checkbox" data-key="day-48:91v9t2"><span>Grammar: Past Simple (past projects) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · Классический NLP — теория week 1 · Теория NLP / RNN + attention (ARC-01,02,03,12…15)</h3>
+<label class="item" data-key="day-48:wnct7z"><input type="checkbox" data-key="day-48:wnct7z"><span>Мапа блок 1: теория классического NLP</span></label>
+<label class="item" data-key="day-48:mxc5qp"><input type="checkbox" data-key="day-48:mxc5qp"><span>Вопросы ARC-01, ARC-02, ARC-03, ARC-12…ARC-15</span></label>
+<label class="item" data-key="day-48:40bp88"><input type="checkbox" data-key="day-48:40bp88"><span>**Homework check:** Самопроверка ARC-вопросов вслух 10 мин</span></label>
+</article>
+<article class="day" id="day-49">
+<div class="day-num">Day 49 <span class="badge">Week 7 (Sun)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-49:kwonop"><input type="checkbox" data-key="day-49:kwonop"><span>Active listen 30 min (subtitles): pause, add 3–5 phrases → Anki</span></label>
+<label class="item" data-key="day-49:tn3dbb"><input type="checkbox" data-key="day-49:tn3dbb"><span>Speak 5 questions for the company out loud</span></label>
+<label class="item" data-key="day-49:5mxe69"><input type="checkbox" data-key="day-49:5mxe69"><span>Anki reviews + 5 new Skyeng words from vocabulary.md; tiny work sentence each</span></label>
+<label class="item" data-key="day-49:lapjf7"><input type="checkbox" data-key="day-49:lapjf7"><span>Grammar: Present Perfect (what I’ve built) — write 5 work sentences; say aloud</span></label>
+<label class="item" data-key="day-49:u40ylm"><input type="checkbox" data-key="day-49:u40ylm"><span>Weekly English review 15–20 min: Anki load + one weak speaking spot</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · Классический NLP — теория week 1 · Теория NLP / RNN + attention (ARC-01,02,03,12…15)</h3>
+<label class="item" data-key="day-49:49vf8v"><input type="checkbox" data-key="day-49:49vf8v"><span>Итог недели (коротко): прогресс по «Теория NLP / RNN + attention (ARC-01,02,03,12…15)»</span></label>
+<label class="item" data-key="day-49:49vf8v"><input type="checkbox" data-key="day-49:49vf8v"><span>Итог недели (коротко): прогресс по «Теория NLP / RNN + attention (ARC-01,02,03,12…15)»</span></label>
+</article>
+<article class="day" id="day-50">
+<div class="day-num">Day 50 <span class="badge">Week 8 (Mon)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-50:97n2c3"><input type="checkbox" data-key="day-50:97n2c3"><span>Semi-passive 25 min: fewer pauses, follow the flow</span></label>
+<label class="item" data-key="day-50:jwk5p3"><input type="checkbox" data-key="day-50:jwk5p3"><span>Voice: “Tell me about yourself” 90 sec + follow-ups</span></label>
+<label class="item" data-key="day-50:q95exe"><input type="checkbox" data-key="day-50:q95exe"><span>Anki 20–30 min; add 10 Skyeng cards</span></label>
+<label class="item" data-key="day-50:dom3b4"><input type="checkbox" data-key="day-50:dom3b4"><span>Grammar: Future will / going to (plans) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · Классический NLP — теория week 2 · Дз Трансформеры + вводный трансформер (ARC-04…)</h3>
+<label class="item" data-key="day-50:qv9hfi"><input type="checkbox" data-key="day-50:qv9hfi"><span>Старт недели: Дз Трансформеры из бота</span></label>
+<label class="item" data-key="day-50:6ggrgp"><input type="checkbox" data-key="day-50:6ggrgp"><span>Старт недели: ARC-04,05,06,07,09,10,11,16 — трансформер вводно</span></label>
+<label class="item" data-key="day-50:9mcwr2"><input type="checkbox" data-key="day-50:9mcwr2"><span>Старт недели: Закрепить TR-01…TR-05 по ходу Дз</span></label>
+</article>
+<article class="day" id="day-51">
+<div class="day-num">Day 51 <span class="badge">Week 8 (Tue)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-51:oe7s2p"><input type="checkbox" data-key="day-51:oe7s2p"><span>Active 20 min + semi-passive 20 min (IT/ML talk you like)</span></label>
+<label class="item" data-key="day-51:vllh3w"><input type="checkbox" data-key="day-51:vllh3w"><span>Project story A out loud 2–3 min (problem → role → build → result)</span></label>
+<label class="item" data-key="day-51:qi1yva"><input type="checkbox" data-key="day-51:qi1yva"><span>Anki catch-up reviews + reuse 5 mature words in a 2-min spoken story</span></label>
+<label class="item" data-key="day-51:dg2tbs"><input type="checkbox" data-key="day-51:dg2tbs"><span>Grammar: Present Simple (who I am / usual work) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · Классический NLP — теория week 2 · Дз Трансформеры + вводный трансформер (ARC-04…)</h3>
+<label class="item" data-key="day-51:jlzpv1"><input type="checkbox" data-key="day-51:jlzpv1"><span>Дз Трансформеры из бота</span></label>
+<label class="item" data-key="day-51:nxotky"><input type="checkbox" data-key="day-51:nxotky"><span>ARC-04,05,06,07,09,10,11,16 — трансформер вводно</span></label>
+<label class="item" data-key="day-51:yrjrib"><input type="checkbox" data-key="day-51:yrjrib"><span>Закрепить TR-01…TR-05 по ходу Дз</span></label>
+</article>
+<article class="day" id="day-52">
+<div class="day-num">Day 52 <span class="badge">Week 8 (Wed)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-52:kqn6ys"><input type="checkbox" data-key="day-52:kqn6ys"><span>Active: short tech/interview clip; phrases → Anki</span></label>
+<label class="item" data-key="day-52:1brwbs"><input type="checkbox" data-key="day-52:1brwbs"><span>Project story B out loud 2–3 min</span></label>
+<label class="item" data-key="day-52:gvc5bp"><input type="checkbox" data-key="day-52:gvc5bp"><span>Anki + 10 Skyeng words; reuse yesterday’s 5 words in Voice</span></label>
+<label class="item" data-key="day-52:enbx2i"><input type="checkbox" data-key="day-52:enbx2i"><span>Grammar: Present Continuous (this sprint) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · Классический NLP — теория week 2 · Дз Трансформеры + вводный трансформер (ARC-04…)</h3>
+<label class="item" data-key="day-52:jlzpv1"><input type="checkbox" data-key="day-52:jlzpv1"><span>Дз Трансформеры из бота</span></label>
+<label class="item" data-key="day-52:nxotky"><input type="checkbox" data-key="day-52:nxotky"><span>ARC-04,05,06,07,09,10,11,16 — трансформер вводно</span></label>
+<label class="item" data-key="day-52:yrjrib"><input type="checkbox" data-key="day-52:yrjrib"><span>Закрепить TR-01…TR-05 по ходу Дз</span></label>
+<label class="item" data-key="day-52:8wm4br"><input type="checkbox" data-key="day-52:8wm4br"><span>(Сквозное, по желанию) 1 вопрос из OPT / INF / QTZ / PRD</span></label>
+</article>
+<article class="day" id="day-53">
+<div class="day-num">Day 53 <span class="badge">Week 8 (Thu)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-53:rsdsld"><input type="checkbox" data-key="day-53:rsdsld"><span>Passive English in background today + 20 min active with subtitles</span></label>
+<label class="item" data-key="day-53:tpw0cc"><input type="checkbox" data-key="day-53:tpw0cc"><span>Tradeoffs 15 min: threads vs processes OR sync vs async</span></label>
+<label class="item" data-key="day-53:5mxe69"><input type="checkbox" data-key="day-53:5mxe69"><span>Anki reviews + 5 new Skyeng words from vocabulary.md; tiny work sentence each</span></label>
+<label class="item" data-key="day-53:q4w0jf"><input type="checkbox" data-key="day-53:q4w0jf"><span>Grammar: Past Simple (past projects) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · Классический NLP — теория week 2 · Дз Трансформеры + вводный трансформер (ARC-04…)</h3>
+<label class="item" data-key="day-53:jlzpv1"><input type="checkbox" data-key="day-53:jlzpv1"><span>Дз Трансформеры из бота</span></label>
+<label class="item" data-key="day-53:nxotky"><input type="checkbox" data-key="day-53:nxotky"><span>ARC-04,05,06,07,09,10,11,16 — трансформер вводно</span></label>
+<label class="item" data-key="day-53:yrjrib"><input type="checkbox" data-key="day-53:yrjrib"><span>Закрепить TR-01…TR-05 по ходу Дз</span></label>
+</article>
+<article class="day" id="day-54">
+<div class="day-num">Day 54 <span class="badge">Week 8 (Fri)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-54:p5bgi9"><input type="checkbox" data-key="day-54:p5bgi9"><span>Re-listen yesterday’s clip without pausing; note what you catch now</span></label>
+<label class="item" data-key="day-54:2k4m33"><input type="checkbox" data-key="day-54:2k4m33"><span>Behavioral STAR: conflict / deadline / mistake (pick one)</span></label>
+<label class="item" data-key="day-54:q95exe"><input type="checkbox" data-key="day-54:q95exe"><span>Anki 20–30 min; add 10 Skyeng cards</span></label>
+<label class="item" data-key="day-54:reztqn"><input type="checkbox" data-key="day-54:reztqn"><span>Grammar: Present Perfect (what I’ve built) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · Классический NLP — теория week 2 · Дз Трансформеры + вводный трансформер (ARC-04…)</h3>
+<label class="item" data-key="day-54:jlzpv1"><input type="checkbox" data-key="day-54:jlzpv1"><span>Дз Трансформеры из бота</span></label>
+<label class="item" data-key="day-54:nxotky"><input type="checkbox" data-key="day-54:nxotky"><span>ARC-04,05,06,07,09,10,11,16 — трансформер вводно</span></label>
+<label class="item" data-key="day-54:yrjrib"><input type="checkbox" data-key="day-54:yrjrib"><span>Закрепить TR-01…TR-05 по ходу Дз</span></label>
+<label class="item" data-key="day-54:c6npyq"><input type="checkbox" data-key="day-54:c6npyq"><span>**Homework check:** Проверить Дз Трансформеры: коммит / фидбек ментора</span></label>
+</article>
+<article class="day" id="day-55">
+<div class="day-num">Day 55 <span class="badge">Week 8 (Sat)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-55:kwonop"><input type="checkbox" data-key="day-55:kwonop"><span>Active listen 30 min (subtitles): pause, add 3–5 phrases → Anki</span></label>
+<label class="item" data-key="day-55:fpf97c"><input type="checkbox" data-key="day-55:fpf97c"><span>Voice 25 min: “What are you working on now?”</span></label>
+<label class="item" data-key="day-55:qi1yva"><input type="checkbox" data-key="day-55:qi1yva"><span>Anki catch-up reviews + reuse 5 mature words in a 2-min spoken story</span></label>
+<label class="item" data-key="day-55:zf8nav"><input type="checkbox" data-key="day-55:zf8nav"><span>Grammar: Future will / going to (plans) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · Классический NLP — теория week 2 · Дз Трансформеры + вводный трансформер (ARC-04…)</h3>
+<label class="item" data-key="day-55:jlzpv1"><input type="checkbox" data-key="day-55:jlzpv1"><span>Дз Трансформеры из бота</span></label>
+<label class="item" data-key="day-55:nxotky"><input type="checkbox" data-key="day-55:nxotky"><span>ARC-04,05,06,07,09,10,11,16 — трансформер вводно</span></label>
+<label class="item" data-key="day-55:yrjrib"><input type="checkbox" data-key="day-55:yrjrib"><span>Закрепить TR-01…TR-05 по ходу Дз</span></label>
+</article>
+<article class="day" id="day-56">
+<div class="day-num">Day 56 <span class="badge">Week 8 (Sun)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-56:97n2c3"><input type="checkbox" data-key="day-56:97n2c3"><span>Semi-passive 25 min: fewer pauses, follow the flow</span></label>
+<label class="item" data-key="day-56:tn3dbb"><input type="checkbox" data-key="day-56:tn3dbb"><span>Speak 5 questions for the company out loud</span></label>
+<label class="item" data-key="day-56:gvc5bp"><input type="checkbox" data-key="day-56:gvc5bp"><span>Anki + 10 Skyeng words; reuse yesterday’s 5 words in Voice</span></label>
+<label class="item" data-key="day-56:heeg3"><input type="checkbox" data-key="day-56:heeg3"><span>Grammar: Present Simple (who I am / usual work) — write 10; record 5</span></label>
+<label class="item" data-key="day-56:u40ylm"><input type="checkbox" data-key="day-56:u40ylm"><span>Weekly English review 15–20 min: Anki load + one weak speaking spot</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · Классический NLP — теория week 2 · Дз Трансформеры + вводный трансформер (ARC-04…)</h3>
+<label class="item" data-key="day-56:kaj7b6"><input type="checkbox" data-key="day-56:kaj7b6"><span>Итог недели (коротко): прогресс по «Дз Трансформеры + вводный трансформер (ARC-04…)»</span></label>
+<label class="item" data-key="day-56:kaj7b6"><input type="checkbox" data-key="day-56:kaj7b6"><span>Итог недели (коротко): прогресс по «Дз Трансформеры + вводный трансформер (ARC-04…)»</span></label>
+<label class="item" data-key="day-56:kaj7b6"><input type="checkbox" data-key="day-56:kaj7b6"><span>Итог недели (коротко): прогресс по «Дз Трансформеры + вводный трансформер (ARC-04…)»</span></label>
+</article>
+<article class="day" id="day-57">
+<div class="day-num">Day 57 <span class="badge">Week 9 (Mon)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-57:oe7s2p"><input type="checkbox" data-key="day-57:oe7s2p"><span>Active 20 min + semi-passive 20 min (IT/ML talk you like)</span></label>
+<label class="item" data-key="day-57:7o2ce2"><input type="checkbox" data-key="day-57:7o2ce2"><span>Tech-talk mock 30 min: project deep dive + tradeoffs</span></label>
+<label class="item" data-key="day-57:5mxe69"><input type="checkbox" data-key="day-57:5mxe69"><span>Anki reviews + 5 new Skyeng words from vocabulary.md; tiny work sentence each</span></label>
+<label class="item" data-key="day-57:oav66s"><input type="checkbox" data-key="day-57:oav66s"><span>Grammar: Present Continuous (this sprint) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · Классический NLP — теория week 3 · Дз классификация текста; метрики генерации; токенизация шире; T3</h3>
+<label class="item" data-key="day-57:khn97a"><input type="checkbox" data-key="day-57:khn97a"><span>Старт недели: Дз: практика классификации текста</span></label>
+<label class="item" data-key="day-57:hqd08p"><input type="checkbox" data-key="day-57:hqd08p"><span>Старт недели: MET-04…MET-08; TOK-02,06…13</span></label>
+</article>
+<article class="day" id="day-58">
+<div class="day-num">Day 58 <span class="badge">Week 9 (Tue)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-58:kqn6ys"><input type="checkbox" data-key="day-58:kqn6ys"><span>Active: short tech/interview clip; phrases → Anki</span></label>
+<label class="item" data-key="day-58:rte04i"><input type="checkbox" data-key="day-58:rte04i"><span>Hard mock 20 min: fast questions, 30-sec think limit</span></label>
+<label class="item" data-key="day-58:q95exe"><input type="checkbox" data-key="day-58:q95exe"><span>Anki 20–30 min; add 10 Skyeng cards</span></label>
+<label class="item" data-key="day-58:9y4a90"><input type="checkbox" data-key="day-58:9y4a90"><span>Grammar: Past Simple (past projects) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · Классический NLP — теория week 3 · Дз классификация текста; метрики генерации; токенизация шире; T3</h3>
+<label class="item" data-key="day-58:mczdgr"><input type="checkbox" data-key="day-58:mczdgr"><span>Дз: практика классификации текста</span></label>
+<label class="item" data-key="day-58:wgnbc4"><input type="checkbox" data-key="day-58:wgnbc4"><span>MET-04…MET-08; TOK-02,06…13</span></label>
+</article>
+<article class="day" id="day-59">
+<div class="day-num">Day 59 <span class="badge">Week 9 (Wed)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-59:rsdsld"><input type="checkbox" data-key="day-59:rsdsld"><span>Passive English in background today + 20 min active with subtitles</span></label>
+<label class="item" data-key="day-59:9qxhks"><input type="checkbox" data-key="day-59:9qxhks"><span>Voice: remote/motivation answers, short and calm</span></label>
+<label class="item" data-key="day-59:qi1yva"><input type="checkbox" data-key="day-59:qi1yva"><span>Anki catch-up reviews + reuse 5 mature words in a 2-min spoken story</span></label>
+<label class="item" data-key="day-59:eq0k6c"><input type="checkbox" data-key="day-59:eq0k6c"><span>Grammar: Present Perfect (what I’ve built) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · Классический NLP — теория week 3 · Дз классификация текста; метрики генерации; токенизация шире; T3</h3>
+<label class="item" data-key="day-59:mczdgr"><input type="checkbox" data-key="day-59:mczdgr"><span>Дз: практика классификации текста</span></label>
+<label class="item" data-key="day-59:wgnbc4"><input type="checkbox" data-key="day-59:wgnbc4"><span>MET-04…MET-08; TOK-02,06…13</span></label>
+<label class="item" data-key="day-59:8wm4br"><input type="checkbox" data-key="day-59:8wm4br"><span>(Сквозное, по желанию) 1 вопрос из OPT / INF / QTZ / PRD</span></label>
+</article>
+<article class="day" id="day-60">
+<div class="day-num">Day 60 <span class="badge">Week 9 (Thu)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-60:p5bgi9"><input type="checkbox" data-key="day-60:p5bgi9"><span>Re-listen yesterday’s clip without pausing; note what you catch now</span></label>
+<label class="item" data-key="day-60:y3jykn"><input type="checkbox" data-key="day-60:y3jykn"><span>Combo run 20 min: intro + project + one behavioral</span></label>
+<label class="item" data-key="day-60:gvc5bp"><input type="checkbox" data-key="day-60:gvc5bp"><span>Anki + 10 Skyeng words; reuse yesterday’s 5 words in Voice</span></label>
+<label class="item" data-key="day-60:dnlimt"><input type="checkbox" data-key="day-60:dnlimt"><span>Grammar: Future will / going to (plans) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · Классический NLP — теория week 3 · Дз классификация текста; метрики генерации; токенизация шире; T3</h3>
+<label class="item" data-key="day-60:mczdgr"><input type="checkbox" data-key="day-60:mczdgr"><span>Дз: практика классификации текста</span></label>
+<label class="item" data-key="day-60:wgnbc4"><input type="checkbox" data-key="day-60:wgnbc4"><span>MET-04…MET-08; TOK-02,06…13</span></label>
+<label class="item" data-key="day-60:ieyoan"><input type="checkbox" data-key="day-60:ieyoan"><span>**Homework check:** Проверить Дз классификации; повторить TR-01…05</span></label>
+</article>
+<article class="day" id="day-61">
+<div class="day-num">Day 61 <span class="badge">Week 9 (Fri)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-61:kwonop"><input type="checkbox" data-key="day-61:kwonop"><span>Active listen 30 min (subtitles): pause, add 3–5 phrases → Anki</span></label>
+<label class="item" data-key="day-61:xj10sw"><input type="checkbox" data-key="day-61:xj10sw"><span>Full mock screening 25–30 min</span></label>
+<label class="item" data-key="day-61:5mxe69"><input type="checkbox" data-key="day-61:5mxe69"><span>Anki reviews + 5 new Skyeng words from vocabulary.md; tiny work sentence each</span></label>
+<label class="item" data-key="day-61:3ilsqu"><input type="checkbox" data-key="day-61:3ilsqu"><span>Grammar: Present Simple (who I am / usual work) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · Классический NLP — теория week 3 · Дз классификация текста; метрики генерации; токенизация шире; T3</h3>
+<label class="item" data-key="day-61:mczdgr"><input type="checkbox" data-key="day-61:mczdgr"><span>Дз: практика классификации текста</span></label>
+<label class="item" data-key="day-61:wgnbc4"><input type="checkbox" data-key="day-61:wgnbc4"><span>MET-04…MET-08; TOK-02,06…13</span></label>
+</article>
+<article class="day" id="day-62">
+<div class="day-num">Day 62 <span class="badge">Week 9 (Sat)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-62:97n2c3"><input type="checkbox" data-key="day-62:97n2c3"><span>Semi-passive 25 min: fewer pauses, follow the flow</span></label>
+<label class="item" data-key="day-62:7o2ce2"><input type="checkbox" data-key="day-62:7o2ce2"><span>Tech-talk mock 30 min: project deep dive + tradeoffs</span></label>
+<label class="item" data-key="day-62:q95exe"><input type="checkbox" data-key="day-62:q95exe"><span>Anki 20–30 min; add 10 Skyeng cards</span></label>
+<label class="item" data-key="day-62:peav27"><input type="checkbox" data-key="day-62:peav27"><span>Grammar: Present Continuous (this sprint) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · Классический NLP — теория week 3 · Дз классификация текста; метрики генерации; токенизация шире; T3</h3>
+<label class="item" data-key="day-62:mczdgr"><input type="checkbox" data-key="day-62:mczdgr"><span>Дз: практика классификации текста</span></label>
+<label class="item" data-key="day-62:wgnbc4"><input type="checkbox" data-key="day-62:wgnbc4"><span>MET-04…MET-08; TOK-02,06…13</span></label>
+</article>
+<article class="day" id="day-63">
+<div class="day-num">Day 63 <span class="badge">Week 9 (Sun)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-63:oe7s2p"><input type="checkbox" data-key="day-63:oe7s2p"><span>Active 20 min + semi-passive 20 min (IT/ML talk you like)</span></label>
+<label class="item" data-key="day-63:rte04i"><input type="checkbox" data-key="day-63:rte04i"><span>Hard mock 20 min: fast questions, 30-sec think limit</span></label>
+<label class="item" data-key="day-63:qi1yva"><input type="checkbox" data-key="day-63:qi1yva"><span>Anki catch-up reviews + reuse 5 mature words in a 2-min spoken story</span></label>
+<label class="item" data-key="day-63:91v9t2"><input type="checkbox" data-key="day-63:91v9t2"><span>Grammar: Past Simple (past projects) — speak 8 examples to Voice (no writing)</span></label>
+<label class="item" data-key="day-63:u40ylm"><input type="checkbox" data-key="day-63:u40ylm"><span>Weekly English review 15–20 min: Anki load + one weak speaking spot</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · Классический NLP — теория week 3 · Дз классификация текста; метрики генерации; токенизация шире; T3</h3>
+<label class="item" data-key="day-63:i4pzlb"><input type="checkbox" data-key="day-63:i4pzlb"><span>Итог недели (коротко): прогресс по «Дз классификация текста; метрики генерации; токенизация шире; T3»</span></label>
+<label class="item" data-key="day-63:i4pzlb"><input type="checkbox" data-key="day-63:i4pzlb"><span>Итог недели (коротко): прогресс по «Дз классификация текста; метрики генерации; токенизация шире; T3»</span></label>
+<label class="item" data-key="day-63:iftkle"><input type="checkbox" data-key="day-63:iftkle"><span>**Gate:** T3 — Core NLP / Transformers</span></label>
+</article>
+<article class="day" id="day-64">
+<div class="day-num">Day 64 <span class="badge">Week 10 (Mon)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-64:kqn6ys"><input type="checkbox" data-key="day-64:kqn6ys"><span>Active: short tech/interview clip; phrases → Anki</span></label>
+<label class="item" data-key="day-64:9qxhks"><input type="checkbox" data-key="day-64:9qxhks"><span>Voice: remote/motivation answers, short and calm</span></label>
+<label class="item" data-key="day-64:gvc5bp"><input type="checkbox" data-key="day-64:gvc5bp"><span>Anki + 10 Skyeng words; reuse yesterday’s 5 words in Voice</span></label>
+<label class="item" data-key="day-64:lapjf7"><input type="checkbox" data-key="day-64:lapjf7"><span>Grammar: Present Perfect (what I’ve built) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · LLM week 1 · Дз по LLM; TR-01…15; alignment; decoding</h3>
+<label class="item" data-key="day-64:jfi4oq"><input type="checkbox" data-key="day-64:jfi4oq"><span>Старт недели: Дз по LLM из бота</span></label>
+<label class="item" data-key="day-64:xn74kp"><input type="checkbox" data-key="day-64:xn74kp"><span>Старт недели: TR-01…TR-15; OPT-10, OPT-11, OPT-02; INF-05…INF-09</span></label>
+</article>
+<article class="day" id="day-65">
+<div class="day-num">Day 65 <span class="badge">Week 10 (Tue)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-65:rsdsld"><input type="checkbox" data-key="day-65:rsdsld"><span>Passive English in background today + 20 min active with subtitles</span></label>
+<label class="item" data-key="day-65:y3jykn"><input type="checkbox" data-key="day-65:y3jykn"><span>Combo run 20 min: intro + project + one behavioral</span></label>
+<label class="item" data-key="day-65:5mxe69"><input type="checkbox" data-key="day-65:5mxe69"><span>Anki reviews + 5 new Skyeng words from vocabulary.md; tiny work sentence each</span></label>
+<label class="item" data-key="day-65:dom3b4"><input type="checkbox" data-key="day-65:dom3b4"><span>Grammar: Future will / going to (plans) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · LLM week 1 · Дз по LLM; TR-01…15; alignment; decoding</h3>
+<label class="item" data-key="day-65:ux1dwl"><input type="checkbox" data-key="day-65:ux1dwl"><span>Дз по LLM из бота</span></label>
+<label class="item" data-key="day-65:n84oi4"><input type="checkbox" data-key="day-65:n84oi4"><span>TR-01…TR-15; OPT-10, OPT-11, OPT-02; INF-05…INF-09</span></label>
+</article>
+<article class="day" id="day-66">
+<div class="day-num">Day 66 <span class="badge">Week 10 (Wed)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-66:p5bgi9"><input type="checkbox" data-key="day-66:p5bgi9"><span>Re-listen yesterday’s clip without pausing; note what you catch now</span></label>
+<label class="item" data-key="day-66:xj10sw"><input type="checkbox" data-key="day-66:xj10sw"><span>Full mock screening 25–30 min</span></label>
+<label class="item" data-key="day-66:q95exe"><input type="checkbox" data-key="day-66:q95exe"><span>Anki 20–30 min; add 10 Skyeng cards</span></label>
+<label class="item" data-key="day-66:dg2tbs"><input type="checkbox" data-key="day-66:dg2tbs"><span>Grammar: Present Simple (who I am / usual work) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · LLM week 1 · Дз по LLM; TR-01…15; alignment; decoding</h3>
+<label class="item" data-key="day-66:ux1dwl"><input type="checkbox" data-key="day-66:ux1dwl"><span>Дз по LLM из бота</span></label>
+<label class="item" data-key="day-66:n84oi4"><input type="checkbox" data-key="day-66:n84oi4"><span>TR-01…TR-15; OPT-10, OPT-11, OPT-02; INF-05…INF-09</span></label>
+<label class="item" data-key="day-66:8wm4br"><input type="checkbox" data-key="day-66:8wm4br"><span>(Сквозное, по желанию) 1 вопрос из OPT / INF / QTZ / PRD</span></label>
+</article>
+<article class="day" id="day-67">
+<div class="day-num">Day 67 <span class="badge">Week 10 (Thu)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-67:kwonop"><input type="checkbox" data-key="day-67:kwonop"><span>Active listen 30 min (subtitles): pause, add 3–5 phrases → Anki</span></label>
+<label class="item" data-key="day-67:7o2ce2"><input type="checkbox" data-key="day-67:7o2ce2"><span>Tech-talk mock 30 min: project deep dive + tradeoffs</span></label>
+<label class="item" data-key="day-67:qi1yva"><input type="checkbox" data-key="day-67:qi1yva"><span>Anki catch-up reviews + reuse 5 mature words in a 2-min spoken story</span></label>
+<label class="item" data-key="day-67:enbx2i"><input type="checkbox" data-key="day-67:enbx2i"><span>Grammar: Present Continuous (this sprint) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · LLM week 1 · Дз по LLM; TR-01…15; alignment; decoding</h3>
+<label class="item" data-key="day-67:ux1dwl"><input type="checkbox" data-key="day-67:ux1dwl"><span>Дз по LLM из бота</span></label>
+<label class="item" data-key="day-67:n84oi4"><input type="checkbox" data-key="day-67:n84oi4"><span>TR-01…TR-15; OPT-10, OPT-11, OPT-02; INF-05…INF-09</span></label>
+</article>
+<article class="day" id="day-68">
+<div class="day-num">Day 68 <span class="badge">Week 10 (Fri)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-68:97n2c3"><input type="checkbox" data-key="day-68:97n2c3"><span>Semi-passive 25 min: fewer pauses, follow the flow</span></label>
+<label class="item" data-key="day-68:rte04i"><input type="checkbox" data-key="day-68:rte04i"><span>Hard mock 20 min: fast questions, 30-sec think limit</span></label>
+<label class="item" data-key="day-68:gvc5bp"><input type="checkbox" data-key="day-68:gvc5bp"><span>Anki + 10 Skyeng words; reuse yesterday’s 5 words in Voice</span></label>
+<label class="item" data-key="day-68:q4w0jf"><input type="checkbox" data-key="day-68:q4w0jf"><span>Grammar: Past Simple (past projects) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · LLM week 1 · Дз по LLM; TR-01…15; alignment; decoding</h3>
+<label class="item" data-key="day-68:ux1dwl"><input type="checkbox" data-key="day-68:ux1dwl"><span>Дз по LLM из бота</span></label>
+<label class="item" data-key="day-68:n84oi4"><input type="checkbox" data-key="day-68:n84oi4"><span>TR-01…TR-15; OPT-10, OPT-11, OPT-02; INF-05…INF-09</span></label>
+<label class="item" data-key="day-68:31220n"><input type="checkbox" data-key="day-68:31220n"><span>**Homework check:** Проверить Дз LLM; подготовка к T4</span></label>
+</article>
+<article class="day" id="day-69">
+<div class="day-num">Day 69 <span class="badge">Week 10 (Sat)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-69:oe7s2p"><input type="checkbox" data-key="day-69:oe7s2p"><span>Active 20 min + semi-passive 20 min (IT/ML talk you like)</span></label>
+<label class="item" data-key="day-69:9qxhks"><input type="checkbox" data-key="day-69:9qxhks"><span>Voice: remote/motivation answers, short and calm</span></label>
+<label class="item" data-key="day-69:5mxe69"><input type="checkbox" data-key="day-69:5mxe69"><span>Anki reviews + 5 new Skyeng words from vocabulary.md; tiny work sentence each</span></label>
+<label class="item" data-key="day-69:reztqn"><input type="checkbox" data-key="day-69:reztqn"><span>Grammar: Present Perfect (what I’ve built) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · LLM week 1 · Дз по LLM; TR-01…15; alignment; decoding</h3>
+<label class="item" data-key="day-69:ux1dwl"><input type="checkbox" data-key="day-69:ux1dwl"><span>Дз по LLM из бота</span></label>
+<label class="item" data-key="day-69:n84oi4"><input type="checkbox" data-key="day-69:n84oi4"><span>TR-01…TR-15; OPT-10, OPT-11, OPT-02; INF-05…INF-09</span></label>
+</article>
+<article class="day" id="day-70">
+<div class="day-num">Day 70 <span class="badge">Week 10 (Sun)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-70:kqn6ys"><input type="checkbox" data-key="day-70:kqn6ys"><span>Active: short tech/interview clip; phrases → Anki</span></label>
+<label class="item" data-key="day-70:y3jykn"><input type="checkbox" data-key="day-70:y3jykn"><span>Combo run 20 min: intro + project + one behavioral</span></label>
+<label class="item" data-key="day-70:q95exe"><input type="checkbox" data-key="day-70:q95exe"><span>Anki 20–30 min; add 10 Skyeng cards</span></label>
+<label class="item" data-key="day-70:zf8nav"><input type="checkbox" data-key="day-70:zf8nav"><span>Grammar: Future will / going to (plans) — write 5 work sentences; say aloud</span></label>
+<label class="item" data-key="day-70:u40ylm"><input type="checkbox" data-key="day-70:u40ylm"><span>Weekly English review 15–20 min: Anki load + one weak speaking spot</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · LLM week 1 · Дз по LLM; TR-01…15; alignment; decoding</h3>
+<label class="item" data-key="day-70:zcmmu8"><input type="checkbox" data-key="day-70:zcmmu8"><span>Итог недели (коротко): прогресс по «Дз по LLM; TR-01…15; alignment; decoding»</span></label>
+<label class="item" data-key="day-70:zcmmu8"><input type="checkbox" data-key="day-70:zcmmu8"><span>Итог недели (коротко): прогресс по «Дз по LLM; TR-01…15; alignment; decoding»</span></label>
+<label class="item" data-key="day-70:98sbv6"><input type="checkbox" data-key="day-70:98sbv6"><span>**Gate:** T4 — LLM</span></label>
+</article>
+<article class="day" id="day-71">
+<div class="day-num">Day 71 <span class="badge">Week 11 (Mon)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-71:rsdsld"><input type="checkbox" data-key="day-71:rsdsld"><span>Passive English in background today + 20 min active with subtitles</span></label>
+<label class="item" data-key="day-71:xj10sw"><input type="checkbox" data-key="day-71:xj10sw"><span>Full mock screening 25–30 min</span></label>
+<label class="item" data-key="day-71:qi1yva"><input type="checkbox" data-key="day-71:qi1yva"><span>Anki catch-up reviews + reuse 5 mature words in a 2-min spoken story</span></label>
+<label class="item" data-key="day-71:heeg3"><input type="checkbox" data-key="day-71:heeg3"><span>Grammar: Present Simple (who I am / usual work) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · RAG week 1 · Дз RAG — старт; схема RAG-01, RAG-03; инструменты RAG-05…08</h3>
+<label class="item" data-key="day-71:x1bm9n"><input type="checkbox" data-key="day-71:x1bm9n"><span>Старт недели: Начать Дз по RAG</span></label>
+<label class="item" data-key="day-71:uk8lvb"><input type="checkbox" data-key="day-71:uk8lvb"><span>Старт недели: RAG-01, RAG-03; RAG-05…RAG-08</span></label>
+</article>
+<article class="day" id="day-72">
+<div class="day-num">Day 72 <span class="badge">Week 11 (Tue)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-72:p5bgi9"><input type="checkbox" data-key="day-72:p5bgi9"><span>Re-listen yesterday’s clip without pausing; note what you catch now</span></label>
+<label class="item" data-key="day-72:7o2ce2"><input type="checkbox" data-key="day-72:7o2ce2"><span>Tech-talk mock 30 min: project deep dive + tradeoffs</span></label>
+<label class="item" data-key="day-72:gvc5bp"><input type="checkbox" data-key="day-72:gvc5bp"><span>Anki + 10 Skyeng words; reuse yesterday’s 5 words in Voice</span></label>
+<label class="item" data-key="day-72:oav66s"><input type="checkbox" data-key="day-72:oav66s"><span>Grammar: Present Continuous (this sprint) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · RAG week 1 · Дз RAG — старт; схема RAG-01, RAG-03; инструменты RAG-05…08</h3>
+<label class="item" data-key="day-72:psiqfa"><input type="checkbox" data-key="day-72:psiqfa"><span>Начать Дз по RAG</span></label>
+<label class="item" data-key="day-72:jx46zi"><input type="checkbox" data-key="day-72:jx46zi"><span>RAG-01, RAG-03; RAG-05…RAG-08</span></label>
+</article>
+<article class="day" id="day-73">
+<div class="day-num">Day 73 <span class="badge">Week 11 (Wed)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-73:kwonop"><input type="checkbox" data-key="day-73:kwonop"><span>Active listen 30 min (subtitles): pause, add 3–5 phrases → Anki</span></label>
+<label class="item" data-key="day-73:rte04i"><input type="checkbox" data-key="day-73:rte04i"><span>Hard mock 20 min: fast questions, 30-sec think limit</span></label>
+<label class="item" data-key="day-73:5mxe69"><input type="checkbox" data-key="day-73:5mxe69"><span>Anki reviews + 5 new Skyeng words from vocabulary.md; tiny work sentence each</span></label>
+<label class="item" data-key="day-73:9y4a90"><input type="checkbox" data-key="day-73:9y4a90"><span>Grammar: Past Simple (past projects) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · RAG week 1 · Дз RAG — старт; схема RAG-01, RAG-03; инструменты RAG-05…08</h3>
+<label class="item" data-key="day-73:psiqfa"><input type="checkbox" data-key="day-73:psiqfa"><span>Начать Дз по RAG</span></label>
+<label class="item" data-key="day-73:jx46zi"><input type="checkbox" data-key="day-73:jx46zi"><span>RAG-01, RAG-03; RAG-05…RAG-08</span></label>
+<label class="item" data-key="day-73:8wm4br"><input type="checkbox" data-key="day-73:8wm4br"><span>(Сквозное, по желанию) 1 вопрос из OPT / INF / QTZ / PRD</span></label>
+</article>
+<article class="day" id="day-74">
+<div class="day-num">Day 74 <span class="badge">Week 11 (Thu)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-74:97n2c3"><input type="checkbox" data-key="day-74:97n2c3"><span>Semi-passive 25 min: fewer pauses, follow the flow</span></label>
+<label class="item" data-key="day-74:9qxhks"><input type="checkbox" data-key="day-74:9qxhks"><span>Voice: remote/motivation answers, short and calm</span></label>
+<label class="item" data-key="day-74:q95exe"><input type="checkbox" data-key="day-74:q95exe"><span>Anki 20–30 min; add 10 Skyeng cards</span></label>
+<label class="item" data-key="day-74:eq0k6c"><input type="checkbox" data-key="day-74:eq0k6c"><span>Grammar: Present Perfect (what I’ve built) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · RAG week 1 · Дз RAG — старт; схема RAG-01, RAG-03; инструменты RAG-05…08</h3>
+<label class="item" data-key="day-74:psiqfa"><input type="checkbox" data-key="day-74:psiqfa"><span>Начать Дз по RAG</span></label>
+<label class="item" data-key="day-74:jx46zi"><input type="checkbox" data-key="day-74:jx46zi"><span>RAG-01, RAG-03; RAG-05…RAG-08</span></label>
+</article>
+<article class="day" id="day-75">
+<div class="day-num">Day 75 <span class="badge">Week 11 (Fri)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-75:oe7s2p"><input type="checkbox" data-key="day-75:oe7s2p"><span>Active 20 min + semi-passive 20 min (IT/ML talk you like)</span></label>
+<label class="item" data-key="day-75:y3jykn"><input type="checkbox" data-key="day-75:y3jykn"><span>Combo run 20 min: intro + project + one behavioral</span></label>
+<label class="item" data-key="day-75:qi1yva"><input type="checkbox" data-key="day-75:qi1yva"><span>Anki catch-up reviews + reuse 5 mature words in a 2-min spoken story</span></label>
+<label class="item" data-key="day-75:dnlimt"><input type="checkbox" data-key="day-75:dnlimt"><span>Grammar: Future will / going to (plans) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · RAG week 1 · Дз RAG — старт; схема RAG-01, RAG-03; инструменты RAG-05…08</h3>
+<label class="item" data-key="day-75:psiqfa"><input type="checkbox" data-key="day-75:psiqfa"><span>Начать Дз по RAG</span></label>
+<label class="item" data-key="day-75:jx46zi"><input type="checkbox" data-key="day-75:jx46zi"><span>RAG-01, RAG-03; RAG-05…RAG-08</span></label>
+<label class="item" data-key="day-75:gai6xr"><input type="checkbox" data-key="day-75:gai6xr"><span>**Homework check:** Чекпоинт Дз RAG: архитектура/схема понятна?</span></label>
+</article>
+<article class="day" id="day-76">
+<div class="day-num">Day 76 <span class="badge">Week 11 (Sat)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-76:kqn6ys"><input type="checkbox" data-key="day-76:kqn6ys"><span>Active: short tech/interview clip; phrases → Anki</span></label>
+<label class="item" data-key="day-76:xj10sw"><input type="checkbox" data-key="day-76:xj10sw"><span>Full mock screening 25–30 min</span></label>
+<label class="item" data-key="day-76:gvc5bp"><input type="checkbox" data-key="day-76:gvc5bp"><span>Anki + 10 Skyeng words; reuse yesterday’s 5 words in Voice</span></label>
+<label class="item" data-key="day-76:3ilsqu"><input type="checkbox" data-key="day-76:3ilsqu"><span>Grammar: Present Simple (who I am / usual work) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · RAG week 1 · Дз RAG — старт; схема RAG-01, RAG-03; инструменты RAG-05…08</h3>
+<label class="item" data-key="day-76:psiqfa"><input type="checkbox" data-key="day-76:psiqfa"><span>Начать Дз по RAG</span></label>
+<label class="item" data-key="day-76:jx46zi"><input type="checkbox" data-key="day-76:jx46zi"><span>RAG-01, RAG-03; RAG-05…RAG-08</span></label>
+</article>
+<article class="day" id="day-77">
+<div class="day-num">Day 77 <span class="badge">Week 11 (Sun)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-77:rsdsld"><input type="checkbox" data-key="day-77:rsdsld"><span>Passive English in background today + 20 min active with subtitles</span></label>
+<label class="item" data-key="day-77:7o2ce2"><input type="checkbox" data-key="day-77:7o2ce2"><span>Tech-talk mock 30 min: project deep dive + tradeoffs</span></label>
+<label class="item" data-key="day-77:5mxe69"><input type="checkbox" data-key="day-77:5mxe69"><span>Anki reviews + 5 new Skyeng words from vocabulary.md; tiny work sentence each</span></label>
+<label class="item" data-key="day-77:peav27"><input type="checkbox" data-key="day-77:peav27"><span>Grammar: Present Continuous (this sprint) — write 10; record 5</span></label>
+<label class="item" data-key="day-77:u40ylm"><input type="checkbox" data-key="day-77:u40ylm"><span>Weekly English review 15–20 min: Anki load + one weak speaking spot</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · RAG week 1 · Дз RAG — старт; схема RAG-01, RAG-03; инструменты RAG-05…08</h3>
+<label class="item" data-key="day-77:tqlsxt"><input type="checkbox" data-key="day-77:tqlsxt"><span>Итог недели (коротко): прогресс по «Дз RAG — старт; схема RAG-01, RAG-03; инструменты RAG-05…08»</span></label>
+<label class="item" data-key="day-77:tqlsxt"><input type="checkbox" data-key="day-77:tqlsxt"><span>Итог недели (коротко): прогресс по «Дз RAG — старт; схема RAG-01, RAG-03; инструменты RAG-05…08»</span></label>
+</article>
+<article class="day" id="day-78">
+<div class="day-num">Day 78 <span class="badge">Week 12 (Mon)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-78:p5bgi9"><input type="checkbox" data-key="day-78:p5bgi9"><span>Re-listen yesterday’s clip without pausing; note what you catch now</span></label>
+<label class="item" data-key="day-78:rte04i"><input type="checkbox" data-key="day-78:rte04i"><span>Hard mock 20 min: fast questions, 30-sec think limit</span></label>
+<label class="item" data-key="day-78:q95exe"><input type="checkbox" data-key="day-78:q95exe"><span>Anki 20–30 min; add 10 Skyeng cards</span></label>
+<label class="item" data-key="day-78:91v9t2"><input type="checkbox" data-key="day-78:91v9t2"><span>Grammar: Past Simple (past projects) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · RAG week 2 · Качество RAG; ретривер; кэш; финиш Дз; T5</h3>
+<label class="item" data-key="day-78:grlnz8"><input type="checkbox" data-key="day-78:grlnz8"><span>Старт недели: RAG-02, MET-12…14; RAG-09, RAG-10; INF-10, INF-11</span></label>
+<label class="item" data-key="day-78:izq7gi"><input type="checkbox" data-key="day-78:izq7gi"><span>Старт недели: Дожать Дз RAG</span></label>
+</article>
+<article class="day" id="day-79">
+<div class="day-num">Day 79 <span class="badge">Week 12 (Tue)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-79:kwonop"><input type="checkbox" data-key="day-79:kwonop"><span>Active listen 30 min (subtitles): pause, add 3–5 phrases → Anki</span></label>
+<label class="item" data-key="day-79:9qxhks"><input type="checkbox" data-key="day-79:9qxhks"><span>Voice: remote/motivation answers, short and calm</span></label>
+<label class="item" data-key="day-79:qi1yva"><input type="checkbox" data-key="day-79:qi1yva"><span>Anki catch-up reviews + reuse 5 mature words in a 2-min spoken story</span></label>
+<label class="item" data-key="day-79:lapjf7"><input type="checkbox" data-key="day-79:lapjf7"><span>Grammar: Present Perfect (what I’ve built) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · RAG week 2 · Качество RAG; ретривер; кэш; финиш Дз; T5</h3>
+<label class="item" data-key="day-79:zh5z9j"><input type="checkbox" data-key="day-79:zh5z9j"><span>RAG-02, MET-12…14; RAG-09, RAG-10; INF-10, INF-11</span></label>
+<label class="item" data-key="day-79:kr7wsz"><input type="checkbox" data-key="day-79:kr7wsz"><span>Дожать Дз RAG</span></label>
+</article>
+<article class="day" id="day-80">
+<div class="day-num">Day 80 <span class="badge">Week 12 (Wed)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-80:97n2c3"><input type="checkbox" data-key="day-80:97n2c3"><span>Semi-passive 25 min: fewer pauses, follow the flow</span></label>
+<label class="item" data-key="day-80:y3jykn"><input type="checkbox" data-key="day-80:y3jykn"><span>Combo run 20 min: intro + project + one behavioral</span></label>
+<label class="item" data-key="day-80:gvc5bp"><input type="checkbox" data-key="day-80:gvc5bp"><span>Anki + 10 Skyeng words; reuse yesterday’s 5 words in Voice</span></label>
+<label class="item" data-key="day-80:dom3b4"><input type="checkbox" data-key="day-80:dom3b4"><span>Grammar: Future will / going to (plans) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · RAG week 2 · Качество RAG; ретривер; кэш; финиш Дз; T5</h3>
+<label class="item" data-key="day-80:zh5z9j"><input type="checkbox" data-key="day-80:zh5z9j"><span>RAG-02, MET-12…14; RAG-09, RAG-10; INF-10, INF-11</span></label>
+<label class="item" data-key="day-80:kr7wsz"><input type="checkbox" data-key="day-80:kr7wsz"><span>Дожать Дз RAG</span></label>
+<label class="item" data-key="day-80:8wm4br"><input type="checkbox" data-key="day-80:8wm4br"><span>(Сквозное, по желанию) 1 вопрос из OPT / INF / QTZ / PRD</span></label>
+</article>
+<article class="day" id="day-81">
+<div class="day-num">Day 81 <span class="badge">Week 12 (Thu)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-81:oe7s2p"><input type="checkbox" data-key="day-81:oe7s2p"><span>Active 20 min + semi-passive 20 min (IT/ML talk you like)</span></label>
+<label class="item" data-key="day-81:xj10sw"><input type="checkbox" data-key="day-81:xj10sw"><span>Full mock screening 25–30 min</span></label>
+<label class="item" data-key="day-81:5mxe69"><input type="checkbox" data-key="day-81:5mxe69"><span>Anki reviews + 5 new Skyeng words from vocabulary.md; tiny work sentence each</span></label>
+<label class="item" data-key="day-81:dg2tbs"><input type="checkbox" data-key="day-81:dg2tbs"><span>Grammar: Present Simple (who I am / usual work) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · RAG week 2 · Качество RAG; ретривер; кэш; финиш Дз; T5</h3>
+<label class="item" data-key="day-81:zh5z9j"><input type="checkbox" data-key="day-81:zh5z9j"><span>RAG-02, MET-12…14; RAG-09, RAG-10; INF-10, INF-11</span></label>
+<label class="item" data-key="day-81:kr7wsz"><input type="checkbox" data-key="day-81:kr7wsz"><span>Дожать Дз RAG</span></label>
+<label class="item" data-key="day-81:44hfnl"><input type="checkbox" data-key="day-81:44hfnl"><span>**Homework check:** Проверить Дз RAG; подготовка к T5</span></label>
+</article>
+<article class="day" id="day-82">
+<div class="day-num">Day 82 <span class="badge">Week 12 (Fri)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-82:kqn6ys"><input type="checkbox" data-key="day-82:kqn6ys"><span>Active: short tech/interview clip; phrases → Anki</span></label>
+<label class="item" data-key="day-82:7o2ce2"><input type="checkbox" data-key="day-82:7o2ce2"><span>Tech-talk mock 30 min: project deep dive + tradeoffs</span></label>
+<label class="item" data-key="day-82:q95exe"><input type="checkbox" data-key="day-82:q95exe"><span>Anki 20–30 min; add 10 Skyeng cards</span></label>
+<label class="item" data-key="day-82:enbx2i"><input type="checkbox" data-key="day-82:enbx2i"><span>Grammar: Present Continuous (this sprint) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · RAG week 2 · Качество RAG; ретривер; кэш; финиш Дз; T5</h3>
+<label class="item" data-key="day-82:zh5z9j"><input type="checkbox" data-key="day-82:zh5z9j"><span>RAG-02, MET-12…14; RAG-09, RAG-10; INF-10, INF-11</span></label>
+<label class="item" data-key="day-82:kr7wsz"><input type="checkbox" data-key="day-82:kr7wsz"><span>Дожать Дз RAG</span></label>
+</article>
+<article class="day" id="day-83">
+<div class="day-num">Day 83 <span class="badge">Week 12 (Sat)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-83:rsdsld"><input type="checkbox" data-key="day-83:rsdsld"><span>Passive English in background today + 20 min active with subtitles</span></label>
+<label class="item" data-key="day-83:rte04i"><input type="checkbox" data-key="day-83:rte04i"><span>Hard mock 20 min: fast questions, 30-sec think limit</span></label>
+<label class="item" data-key="day-83:qi1yva"><input type="checkbox" data-key="day-83:qi1yva"><span>Anki catch-up reviews + reuse 5 mature words in a 2-min spoken story</span></label>
+<label class="item" data-key="day-83:q4w0jf"><input type="checkbox" data-key="day-83:q4w0jf"><span>Grammar: Past Simple (past projects) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · RAG week 2 · Качество RAG; ретривер; кэш; финиш Дз; T5</h3>
+<label class="item" data-key="day-83:zh5z9j"><input type="checkbox" data-key="day-83:zh5z9j"><span>RAG-02, MET-12…14; RAG-09, RAG-10; INF-10, INF-11</span></label>
+<label class="item" data-key="day-83:kr7wsz"><input type="checkbox" data-key="day-83:kr7wsz"><span>Дожать Дз RAG</span></label>
+</article>
+<article class="day" id="day-84">
+<div class="day-num">Day 84 <span class="badge">Week 12 (Sun)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-84:p5bgi9"><input type="checkbox" data-key="day-84:p5bgi9"><span>Re-listen yesterday’s clip without pausing; note what you catch now</span></label>
+<label class="item" data-key="day-84:9qxhks"><input type="checkbox" data-key="day-84:9qxhks"><span>Voice: remote/motivation answers, short and calm</span></label>
+<label class="item" data-key="day-84:gvc5bp"><input type="checkbox" data-key="day-84:gvc5bp"><span>Anki + 10 Skyeng words; reuse yesterday’s 5 words in Voice</span></label>
+<label class="item" data-key="day-84:reztqn"><input type="checkbox" data-key="day-84:reztqn"><span>Grammar: Present Perfect (what I’ve built) — speak 8 examples to Voice (no writing)</span></label>
+<label class="item" data-key="day-84:u40ylm"><input type="checkbox" data-key="day-84:u40ylm"><span>Weekly English review 15–20 min: Anki load + one weak speaking spot</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP · RAG week 2 · Качество RAG; ретривер; кэш; финиш Дз; T5</h3>
+<label class="item" data-key="day-84:uf9wi9"><input type="checkbox" data-key="day-84:uf9wi9"><span>Итог недели (коротко): прогресс по «Качество RAG; ретривер; кэш; финиш Дз; T5»</span></label>
+<label class="item" data-key="day-84:uf9wi9"><input type="checkbox" data-key="day-84:uf9wi9"><span>Итог недели (коротко): прогресс по «Качество RAG; ретривер; кэш; финиш Дз; T5»</span></label>
+<label class="item" data-key="day-84:nx6q9q"><input type="checkbox" data-key="day-84:nx6q9q"><span>**Gate:** T5 — RAG</span></label>
+</article>
+<article class="day" id="day-85">
+<div class="day-num">Day 85 <span class="badge">Week 13 (Mon)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-85:kwonop"><input type="checkbox" data-key="day-85:kwonop"><span>Active listen 30 min (subtitles): pause, add 3–5 phrases → Anki</span></label>
+<label class="item" data-key="day-85:y3jykn"><input type="checkbox" data-key="day-85:y3jykn"><span>Combo run 20 min: intro + project + one behavioral</span></label>
+<label class="item" data-key="day-85:5mxe69"><input type="checkbox" data-key="day-85:5mxe69"><span>Anki reviews + 5 new Skyeng words from vocabulary.md; tiny work sentence each</span></label>
+<label class="item" data-key="day-85:zf8nav"><input type="checkbox" data-key="day-85:zf8nav"><span>Grammar: Future will / going to (plans) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP (опционально) · Agents week 1 · Дз Agents — старт; оркестрация / tools</h3>
+<label class="item" data-key="day-85:wh48x4"><input type="checkbox" data-key="day-85:wh48x4"><span>Старт недели: Начать Дз по Agents (если берёшь опциональный блок)</span></label>
+<label class="item" data-key="day-85:r8mncf"><input type="checkbox" data-key="day-85:r8mncf"><span>Старт недели: RAG-06 + идеи multi-step / tools / guardrails</span></label>
+</article>
+<article class="day" id="day-86">
+<div class="day-num">Day 86 <span class="badge">Week 13 (Tue)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-86:97n2c3"><input type="checkbox" data-key="day-86:97n2c3"><span>Semi-passive 25 min: fewer pauses, follow the flow</span></label>
+<label class="item" data-key="day-86:xj10sw"><input type="checkbox" data-key="day-86:xj10sw"><span>Full mock screening 25–30 min</span></label>
+<label class="item" data-key="day-86:q95exe"><input type="checkbox" data-key="day-86:q95exe"><span>Anki 20–30 min; add 10 Skyeng cards</span></label>
+<label class="item" data-key="day-86:heeg3"><input type="checkbox" data-key="day-86:heeg3"><span>Grammar: Present Simple (who I am / usual work) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP (опционально) · Agents week 1 · Дз Agents — старт; оркестрация / tools</h3>
+<label class="item" data-key="day-86:prch37"><input type="checkbox" data-key="day-86:prch37"><span>Начать Дз по Agents (если берёшь опциональный блок)</span></label>
+<label class="item" data-key="day-86:br93cs"><input type="checkbox" data-key="day-86:br93cs"><span>RAG-06 + идеи multi-step / tools / guardrails</span></label>
+</article>
+<article class="day" id="day-87">
+<div class="day-num">Day 87 <span class="badge">Week 13 (Wed)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-87:oe7s2p"><input type="checkbox" data-key="day-87:oe7s2p"><span>Active 20 min + semi-passive 20 min (IT/ML talk you like)</span></label>
+<label class="item" data-key="day-87:7o2ce2"><input type="checkbox" data-key="day-87:7o2ce2"><span>Tech-talk mock 30 min: project deep dive + tradeoffs</span></label>
+<label class="item" data-key="day-87:qi1yva"><input type="checkbox" data-key="day-87:qi1yva"><span>Anki catch-up reviews + reuse 5 mature words in a 2-min spoken story</span></label>
+<label class="item" data-key="day-87:oav66s"><input type="checkbox" data-key="day-87:oav66s"><span>Grammar: Present Continuous (this sprint) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP (опционально) · Agents week 1 · Дз Agents — старт; оркестрация / tools</h3>
+<label class="item" data-key="day-87:prch37"><input type="checkbox" data-key="day-87:prch37"><span>Начать Дз по Agents (если берёшь опциональный блок)</span></label>
+<label class="item" data-key="day-87:br93cs"><input type="checkbox" data-key="day-87:br93cs"><span>RAG-06 + идеи multi-step / tools / guardrails</span></label>
+<label class="item" data-key="day-87:8wm4br"><input type="checkbox" data-key="day-87:8wm4br"><span>(Сквозное, по желанию) 1 вопрос из OPT / INF / QTZ / PRD</span></label>
+</article>
+<article class="day" id="day-88">
+<div class="day-num">Day 88 <span class="badge">Week 13 (Thu)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-88:kqn6ys"><input type="checkbox" data-key="day-88:kqn6ys"><span>Active: short tech/interview clip; phrases → Anki</span></label>
+<label class="item" data-key="day-88:rte04i"><input type="checkbox" data-key="day-88:rte04i"><span>Hard mock 20 min: fast questions, 30-sec think limit</span></label>
+<label class="item" data-key="day-88:gvc5bp"><input type="checkbox" data-key="day-88:gvc5bp"><span>Anki + 10 Skyeng words; reuse yesterday’s 5 words in Voice</span></label>
+<label class="item" data-key="day-88:9y4a90"><input type="checkbox" data-key="day-88:9y4a90"><span>Grammar: Past Simple (past projects) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP (опционально) · Agents week 1 · Дз Agents — старт; оркестрация / tools</h3>
+<label class="item" data-key="day-88:prch37"><input type="checkbox" data-key="day-88:prch37"><span>Начать Дз по Agents (если берёшь опциональный блок)</span></label>
+<label class="item" data-key="day-88:br93cs"><input type="checkbox" data-key="day-88:br93cs"><span>RAG-06 + идеи multi-step / tools / guardrails</span></label>
+</article>
+<article class="day" id="day-89">
+<div class="day-num">Day 89 <span class="badge">Week 13 (Fri)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-89:rsdsld"><input type="checkbox" data-key="day-89:rsdsld"><span>Passive English in background today + 20 min active with subtitles</span></label>
+<label class="item" data-key="day-89:9qxhks"><input type="checkbox" data-key="day-89:9qxhks"><span>Voice: remote/motivation answers, short and calm</span></label>
+<label class="item" data-key="day-89:5mxe69"><input type="checkbox" data-key="day-89:5mxe69"><span>Anki reviews + 5 new Skyeng words from vocabulary.md; tiny work sentence each</span></label>
+<label class="item" data-key="day-89:eq0k6c"><input type="checkbox" data-key="day-89:eq0k6c"><span>Grammar: Present Perfect (what I’ve built) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP (опционально) · Agents week 1 · Дз Agents — старт; оркестрация / tools</h3>
+<label class="item" data-key="day-89:prch37"><input type="checkbox" data-key="day-89:prch37"><span>Начать Дз по Agents (если берёшь опциональный блок)</span></label>
+<label class="item" data-key="day-89:br93cs"><input type="checkbox" data-key="day-89:br93cs"><span>RAG-06 + идеи multi-step / tools / guardrails</span></label>
+<label class="item" data-key="day-89:87qfxr"><input type="checkbox" data-key="day-89:87qfxr"><span>**Homework check:** Чекпоинт Дз Agents (или отметить skip, если блок пропускаешь)</span></label>
+</article>
+<article class="day" id="day-90">
+<div class="day-num">Day 90 <span class="badge">Week 13 (Sat)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-90:p5bgi9"><input type="checkbox" data-key="day-90:p5bgi9"><span>Re-listen yesterday’s clip without pausing; note what you catch now</span></label>
+<label class="item" data-key="day-90:y3jykn"><input type="checkbox" data-key="day-90:y3jykn"><span>Combo run 20 min: intro + project + one behavioral</span></label>
+<label class="item" data-key="day-90:q95exe"><input type="checkbox" data-key="day-90:q95exe"><span>Anki 20–30 min; add 10 Skyeng cards</span></label>
+<label class="item" data-key="day-90:dnlimt"><input type="checkbox" data-key="day-90:dnlimt"><span>Grammar: Future will / going to (plans) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP (опционально) · Agents week 1 · Дз Agents — старт; оркестрация / tools</h3>
+<label class="item" data-key="day-90:prch37"><input type="checkbox" data-key="day-90:prch37"><span>Начать Дз по Agents (если берёшь опциональный блок)</span></label>
+<label class="item" data-key="day-90:br93cs"><input type="checkbox" data-key="day-90:br93cs"><span>RAG-06 + идеи multi-step / tools / guardrails</span></label>
+</article>
+<article class="day" id="day-91">
+<div class="day-num">Day 91 <span class="badge">Week 13 (Sun)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-91:kwonop"><input type="checkbox" data-key="day-91:kwonop"><span>Active listen 30 min (subtitles): pause, add 3–5 phrases → Anki</span></label>
+<label class="item" data-key="day-91:xj10sw"><input type="checkbox" data-key="day-91:xj10sw"><span>Full mock screening 25–30 min</span></label>
+<label class="item" data-key="day-91:qi1yva"><input type="checkbox" data-key="day-91:qi1yva"><span>Anki catch-up reviews + reuse 5 mature words in a 2-min spoken story</span></label>
+<label class="item" data-key="day-91:3ilsqu"><input type="checkbox" data-key="day-91:3ilsqu"><span>Grammar: Present Simple (who I am / usual work) — write 5 work sentences; say aloud</span></label>
+<label class="item" data-key="day-91:u40ylm"><input type="checkbox" data-key="day-91:u40ylm"><span>Weekly English review 15–20 min: Anki load + one weak speaking spot</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP (опционально) · Agents week 1 · Дз Agents — старт; оркестрация / tools</h3>
+<label class="item" data-key="day-91:8m3wrm"><input type="checkbox" data-key="day-91:8m3wrm"><span>Итог недели (коротко): прогресс по «Дз Agents — старт; оркестрация / tools»</span></label>
+<label class="item" data-key="day-91:8m3wrm"><input type="checkbox" data-key="day-91:8m3wrm"><span>Итог недели (коротко): прогресс по «Дз Agents — старт; оркестрация / tools»</span></label>
+</article>
+<article class="day" id="day-92">
+<div class="day-num">Day 92 <span class="badge">Week 14 (Mon)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-92:97n2c3"><input type="checkbox" data-key="day-92:97n2c3"><span>Semi-passive 25 min: fewer pauses, follow the flow</span></label>
+<label class="item" data-key="day-92:7o2ce2"><input type="checkbox" data-key="day-92:7o2ce2"><span>Tech-talk mock 30 min: project deep dive + tradeoffs</span></label>
+<label class="item" data-key="day-92:gvc5bp"><input type="checkbox" data-key="day-92:gvc5bp"><span>Anki + 10 Skyeng words; reuse yesterday’s 5 words in Voice</span></label>
+<label class="item" data-key="day-92:peav27"><input type="checkbox" data-key="day-92:peav27"><span>Grammar: Present Continuous (this sprint) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP (опционально) · Agents week 2 · Финиш Agents; T6; сквозные OPT/INF/QTZ/PRD по желанию</h3>
+<label class="item" data-key="day-92:z9r1r8"><input type="checkbox" data-key="day-92:z9r1r8"><span>Старт недели: Дожать Дз Agents</span></label>
+<label class="item" data-key="day-92:jlt7jq"><input type="checkbox" data-key="day-92:jlt7jq"><span>Старт недели: По желанию: 2–3 вопроса из OPT / INF / QTZ / PRD</span></label>
+</article>
+<article class="day" id="day-93">
+<div class="day-num">Day 93 <span class="badge">Week 14 (Tue)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-93:oe7s2p"><input type="checkbox" data-key="day-93:oe7s2p"><span>Active 20 min + semi-passive 20 min (IT/ML talk you like)</span></label>
+<label class="item" data-key="day-93:rte04i"><input type="checkbox" data-key="day-93:rte04i"><span>Hard mock 20 min: fast questions, 30-sec think limit</span></label>
+<label class="item" data-key="day-93:5mxe69"><input type="checkbox" data-key="day-93:5mxe69"><span>Anki reviews + 5 new Skyeng words from vocabulary.md; tiny work sentence each</span></label>
+<label class="item" data-key="day-93:91v9t2"><input type="checkbox" data-key="day-93:91v9t2"><span>Grammar: Past Simple (past projects) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP (опционально) · Agents week 2 · Финиш Agents; T6; сквозные OPT/INF/QTZ/PRD по желанию</h3>
+<label class="item" data-key="day-93:sik4dj"><input type="checkbox" data-key="day-93:sik4dj"><span>Дожать Дз Agents</span></label>
+<label class="item" data-key="day-93:ascdhx"><input type="checkbox" data-key="day-93:ascdhx"><span>По желанию: 2–3 вопроса из OPT / INF / QTZ / PRD</span></label>
+</article>
+<article class="day" id="day-94">
+<div class="day-num">Day 94 <span class="badge">Week 14 (Wed)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-94:kqn6ys"><input type="checkbox" data-key="day-94:kqn6ys"><span>Active: short tech/interview clip; phrases → Anki</span></label>
+<label class="item" data-key="day-94:9qxhks"><input type="checkbox" data-key="day-94:9qxhks"><span>Voice: remote/motivation answers, short and calm</span></label>
+<label class="item" data-key="day-94:q95exe"><input type="checkbox" data-key="day-94:q95exe"><span>Anki 20–30 min; add 10 Skyeng cards</span></label>
+<label class="item" data-key="day-94:lapjf7"><input type="checkbox" data-key="day-94:lapjf7"><span>Grammar: Present Perfect (what I’ve built) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP (опционально) · Agents week 2 · Финиш Agents; T6; сквозные OPT/INF/QTZ/PRD по желанию</h3>
+<label class="item" data-key="day-94:sik4dj"><input type="checkbox" data-key="day-94:sik4dj"><span>Дожать Дз Agents</span></label>
+<label class="item" data-key="day-94:ascdhx"><input type="checkbox" data-key="day-94:ascdhx"><span>По желанию: 2–3 вопроса из OPT / INF / QTZ / PRD</span></label>
+<label class="item" data-key="day-94:8wm4br"><input type="checkbox" data-key="day-94:8wm4br"><span>(Сквозное, по желанию) 1 вопрос из OPT / INF / QTZ / PRD</span></label>
+</article>
+<article class="day" id="day-95">
+<div class="day-num">Day 95 <span class="badge">Week 14 (Thu)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-95:rsdsld"><input type="checkbox" data-key="day-95:rsdsld"><span>Passive English in background today + 20 min active with subtitles</span></label>
+<label class="item" data-key="day-95:y3jykn"><input type="checkbox" data-key="day-95:y3jykn"><span>Combo run 20 min: intro + project + one behavioral</span></label>
+<label class="item" data-key="day-95:qi1yva"><input type="checkbox" data-key="day-95:qi1yva"><span>Anki catch-up reviews + reuse 5 mature words in a 2-min spoken story</span></label>
+<label class="item" data-key="day-95:dom3b4"><input type="checkbox" data-key="day-95:dom3b4"><span>Grammar: Future will / going to (plans) — write 10; record 5</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP (опционально) · Agents week 2 · Финиш Agents; T6; сквозные OPT/INF/QTZ/PRD по желанию</h3>
+<label class="item" data-key="day-95:sik4dj"><input type="checkbox" data-key="day-95:sik4dj"><span>Дожать Дз Agents</span></label>
+<label class="item" data-key="day-95:ascdhx"><input type="checkbox" data-key="day-95:ascdhx"><span>По желанию: 2–3 вопроса из OPT / INF / QTZ / PRD</span></label>
+<label class="item" data-key="day-95:p8ast7"><input type="checkbox" data-key="day-95:p8ast7"><span>**Homework check:** Проверить Дз Agents; T6 если сдаёшь</span></label>
+</article>
+<article class="day" id="day-96">
+<div class="day-num">Day 96 <span class="badge">Week 14 (Fri)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-96:p5bgi9"><input type="checkbox" data-key="day-96:p5bgi9"><span>Re-listen yesterday’s clip without pausing; note what you catch now</span></label>
+<label class="item" data-key="day-96:xj10sw"><input type="checkbox" data-key="day-96:xj10sw"><span>Full mock screening 25–30 min</span></label>
+<label class="item" data-key="day-96:gvc5bp"><input type="checkbox" data-key="day-96:gvc5bp"><span>Anki + 10 Skyeng words; reuse yesterday’s 5 words in Voice</span></label>
+<label class="item" data-key="day-96:dg2tbs"><input type="checkbox" data-key="day-96:dg2tbs"><span>Grammar: Present Simple (who I am / usual work) — speak 8 examples to Voice (no writing)</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP (опционально) · Agents week 2 · Финиш Agents; T6; сквозные OPT/INF/QTZ/PRD по желанию</h3>
+<label class="item" data-key="day-96:sik4dj"><input type="checkbox" data-key="day-96:sik4dj"><span>Дожать Дз Agents</span></label>
+<label class="item" data-key="day-96:ascdhx"><input type="checkbox" data-key="day-96:ascdhx"><span>По желанию: 2–3 вопроса из OPT / INF / QTZ / PRD</span></label>
+</article>
+<article class="day" id="day-97">
+<div class="day-num">Day 97 <span class="badge">Week 14 (Sat)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-97:kwonop"><input type="checkbox" data-key="day-97:kwonop"><span>Active listen 30 min (subtitles): pause, add 3–5 phrases → Anki</span></label>
+<label class="item" data-key="day-97:7o2ce2"><input type="checkbox" data-key="day-97:7o2ce2"><span>Tech-talk mock 30 min: project deep dive + tradeoffs</span></label>
+<label class="item" data-key="day-97:5mxe69"><input type="checkbox" data-key="day-97:5mxe69"><span>Anki reviews + 5 new Skyeng words from vocabulary.md; tiny work sentence each</span></label>
+<label class="item" data-key="day-97:enbx2i"><input type="checkbox" data-key="day-97:enbx2i"><span>Grammar: Present Continuous (this sprint) — write 5 work sentences; say aloud</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP (опционально) · Agents week 2 · Финиш Agents; T6; сквозные OPT/INF/QTZ/PRD по желанию</h3>
+<label class="item" data-key="day-97:sik4dj"><input type="checkbox" data-key="day-97:sik4dj"><span>Дожать Дз Agents</span></label>
+<label class="item" data-key="day-97:ascdhx"><input type="checkbox" data-key="day-97:ascdhx"><span>По желанию: 2–3 вопроса из OPT / INF / QTZ / PRD</span></label>
+</article>
+<article class="day" id="day-98">
+<div class="day-num">Day 98 <span class="badge">Week 14 (Sun)</span></div>
+<h3 class="eng">English</h3>
+<label class="item" data-key="day-98:97n2c3"><input type="checkbox" data-key="day-98:97n2c3"><span>Semi-passive 25 min: fewer pauses, follow the flow</span></label>
+<label class="item" data-key="day-98:rte04i"><input type="checkbox" data-key="day-98:rte04i"><span>Hard mock 20 min: fast questions, 30-sec think limit</span></label>
+<label class="item" data-key="day-98:q95exe"><input type="checkbox" data-key="day-98:q95exe"><span>Anki 20–30 min; add 10 Skyeng cards</span></label>
+<label class="item" data-key="day-98:q4w0jf"><input type="checkbox" data-key="day-98:q4w0jf"><span>Grammar: Past Simple (past projects) — write 10; record 5</span></label>
+<label class="item" data-key="day-98:u40ylm"><input type="checkbox" data-key="day-98:u40ylm"><span>Weekly English review 15–20 min: Anki load + one weak speaking spot</span></label>
+<h3 class="code">Coding / ML — Часть 2 — NLP (опционально) · Agents week 2 · Финиш Agents; T6; сквозные OPT/INF/QTZ/PRD по желанию</h3>
+<label class="item" data-key="day-98:5k9w94"><input type="checkbox" data-key="day-98:5k9w94"><span>Итог недели (коротко): прогресс по «Финиш Agents; T6; сквозные OPT/INF/QTZ/PRD по желанию»</span></label>
+<label class="item" data-key="day-98:5k9w94"><input type="checkbox" data-key="day-98:5k9w94"><span>Итог недели (коротко): прогресс по «Финиш Agents; T6; сквозные OPT/INF/QTZ/PRD по желанию»</span></label>
+<label class="item" data-key="day-98:n2jwuw"><input type="checkbox" data-key="day-98:n2jwuw"><span>**Gate:** T6 — Agents (опционально)</span></label>
+</article>
+<section class="intro"><h2>After the checklist</h2>
+<label class="item" data-key="after:8amz4w"><input type="checkbox" data-key="after:8amz4w"><span>Keep Anki reviews going</span></label>
+<label class="item" data-key="after:qjlusf"><input type="checkbox" data-key="after:qjlusf"><span>1 English mock / week</span></label>
+<label class="item" data-key="after:79sgrs"><input type="checkbox" data-key="after:79sgrs"><span>Real interview screens when Phase 3 feels OK</span></label>
+</section><footer id="stats">Days rendered: <strong>98</strong></footer>
+</main>
+<script>
+(function () {
+  const storeKey = "eng-coding-checklist-v1";
+  let state = {};
+  try { state = JSON.parse(localStorage.getItem(storeKey) || "{}"); } catch (e) {}
+  function save() { localStorage.setItem(storeKey, JSON.stringify(state)); }
+  document.querySelectorAll("input[type=checkbox][data-key]").forEach(function (box) {
+    const key = box.getAttribute("data-key");
+    const label = box.closest("label");
+    if (state[key]) { box.checked = true; label.classList.add("done"); }
+    box.addEventListener("change", function () {
+      state[key] = box.checked;
+      label.classList.toggle("done", box.checked);
+      save();
+    });
+  });
+})();
+</script>
+</body>
+</html>
